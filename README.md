@@ -98,10 +98,10 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
 ---
 ## ➜ Github Stats
 <p align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=krexilor&theme=radical&show_icons=true&hide_border=true&count_private=true" alt="GitHub Stats"/>
-  <img height="180em" src="https://github-readme-streak-stats.herokuapp.com?user=krexilor&theme=radical&hide_border=true" alt="GitHub Streak"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=krexilor&theme=radical&show_icons=true&hide_border=true&count_private=true" alt="GitHub Stats" height="150"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=krexilor&theme=radical&hide_border=true" alt="GitHub Streak" height="150"/>
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=krexilor&theme=radical&show_icons=true&hide_border=true&layout=compact" alt="Top Languages"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=krexilor&theme=radical&show_icons=true&hide_border=true&layout=compact" alt="Top Languages" height="150"/>
 </p>
