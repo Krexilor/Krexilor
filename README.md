@@ -89,4 +89,12 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
 </table>
 
 ---
-## ➜ Socials & Portfolio
+## ➜ Socials & Portfolio:-
+
+
+---
+## ➜ Fetured Projects:-
+
+
+---
+## ➜ Github Stats:-
