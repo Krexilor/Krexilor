@@ -33,7 +33,7 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
   <tr>
     <td><b>1</b></td>
     <td><img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Unreal-Engine.png" width="50"/></td>
-    <td><b>Unreal Engien</b></td>
+    <td><b>Unreal Engine</b></td>
     <td>Designing and prototyping immersive game environments, integrating gameplay mechanics, and experimenting with real-time lighting and level design.</td>
   </tr>
   <tr>
@@ -49,7 +49,7 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
   <tr>
     <th>#</th>
     <th>Icon</th>
-    <th>Toll Name</th>
+    <th>Tool Name</th>
     <th>Usage</th>
   </tr>
   <tr>
@@ -67,7 +67,7 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
   <tr>
     <td><b>2</b></td>
     <td><img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Davinvi-Resolve.png" width="50"/></td>
-    <td><b>Davinvi Resolve</b></td>
+    <td><b>Davinci Resolve</b></td>
     <td>Editing cinematic gameplay trailers, motion graphics, and developer showcases.</td>
   </tr>
 </table>
