@@ -89,7 +89,7 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
 </table>
 
 ---
-## ➜ Socials & Portfolio:-
+## ➜ Socials & Contacts:-
 
 
 ---
