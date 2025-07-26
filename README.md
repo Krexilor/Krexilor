@@ -89,12 +89,21 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
 </table>
 
 ---
-## ➜ Socials & Contacts:-
+## ➜ Socials & Contacts
 
 
 ---
-## ➜ Fetured Projects:-
+## ➜ Fetured Projects
 
 
 ---
-## ➜ Github Stats:-
+## ➜ Github Stats
+
+### 📊 Stats:-
+![krexilor's Stats](https://github-readme-stats.vercel.app/api?username=krexilor&theme=radical&show_icons=true&hide_border=true&count_private=true)
+
+### 🔥 Steak:-
+![krexilor's Streak](https://github-readme-streak-stats.herokuapp.com/?user=krexilor&theme=radical&hide_border=true)
+
+### 😂 Top Languages:-
+![krexilor's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=krexilor&theme=radical&show_icons=true&hide_border=true&layout=compact)
