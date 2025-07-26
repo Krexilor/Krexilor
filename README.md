@@ -26,9 +26,9 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
 <table>
   <tr>
     <th>#</th>
-    <th>Tools</th>
-    <th>Names</th>
-    <th>My Usage</th>
+    <th>Icon</th>
+    <th>Tool Name</th>
+    <th>Usage</th>
   </tr>
   <tr>
     <td><b>1</b></td>
@@ -48,9 +48,9 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
 <table>
   <tr>
     <th>#</th>
-    <th>Tools</th>
-    <th>Names</th>
-    <th>My Usage</th>
+    <th>Icon</th>
+    <th>Toll Name</th>
+    <th>Usage</th>
   </tr>
   <tr>
     <td><b>1</b></td>
@@ -76,9 +76,9 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
 <table>
   <tr>
     <th>#</th>
-    <th>Framework</th>
+    <th>Icon</th>
     <th>Language</th>
-    <th>My Usage</th>
+    <th>Usage</th>
   </tr>
   <tr>
     <td><b>1</b></td>
