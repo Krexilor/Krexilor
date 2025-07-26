@@ -22,7 +22,7 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
 ---
 ## ➜ Technical & Creative Proficiency
 
-### 🚀 Development Tools
+### 🚀 Development Tools:-
 <table>
   <tr>
     <th>#</th>
@@ -44,7 +44,7 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
   </tr>
 </table>
 
-### 🎨 Creative Tools
+### 🎨 Creative Tools:-
 <table>
   <tr>
     <th>#</th>
@@ -72,7 +72,7 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
   </tr>
 </table>
 
-### 🧠 Languages & Frameworks
+### 🧠 Languages & Frameworks:-
 <table>
   <tr>
     <th>#</th>
