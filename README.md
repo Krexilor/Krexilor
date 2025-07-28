@@ -89,7 +89,29 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
 
 ---
 ## ➜ Socials & Contacts
-
+<h4 align="center">🔗 Connect With Me</h4>
+<table align="center">
+  <tr>
+    <td align="center">
+      <a href="mailto:aarav.malik.pro@gmail.com">
+        <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Gmail.png" width="40" alt="Email"/><br/>
+        <sub><b>Email</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.instagram.com/krexilor">
+        <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Instagram.png" width="40" alt="Instagram"/><br/>
+        <sub><b>Instagram</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="www.linkedin.com/in/aaravmalikofficial">
+        <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Linkedin.png" width="40" alt="Linkedin"/><br/>
+        <sub><b>Linkedin</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
 ---
 ## ➜ Fetured Projects
