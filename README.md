@@ -93,12 +93,6 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
 <table align="center">
   <tr>
     <td align="center">
-      <a href="mailto:aarav.malik.pro@gmail.com">
-        <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Gmail.png" width="40" alt="Email"/><br/>
-        <sub><b>Email</b></sub>
-      </a>
-    </td>
-    <td align="center">
       <a href="https://www.instagram.com/krexilor">
         <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Instagram.png" width="40" alt="Instagram"/><br/>
         <sub><b>Instagram</b></sub>
