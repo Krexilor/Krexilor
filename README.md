@@ -85,6 +85,12 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
     <td><b>Python</b></td>
     <td>Developing automation tools, game-related scripts, and backend logic for simplifying tasks and enhancing development workflows.</td>
   </tr>
+  <tr>
+    <td><b>1</b></td>
+    <td><img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/C++.png" width="50"/></td>
+    <td><b>C++</b></td>
+    <td>I use C++ primarily for game development and high-performance projects where speed is critical.</td>
+  </tr>
 </table>
 
 ---
