@@ -105,6 +105,12 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
       </a>
     </td>
     <td align="center">
+      <a href="https://x.com/krexilor">
+        <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/X.png" width="40" alt="X"/><br/>
+        <sub><b>X</b></sub>
+      </a>
+    </td>
+    <td align="center">
       <a href="https://discord.com/users/1369319022918631525">
         <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Discord.png" width="40" alt="Discord"/><br/>
         <sub><b>Discord</b></sub>
