@@ -99,9 +99,9 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
       </a>
     </td>
     <td align="center">
-      <a href="www.linkedin.com/in/aaravmalikofficial">
-        <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Linkedin.png" width="40" alt="Linkedin"/><br/>
-        <sub><b>Linkedin</b></sub>
+      <a href="https://discord.com/users/1369319022918631525">
+        <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Discord.png" width="40" alt="Discord"/><br/>
+        <sub><b>Discord</b></sub>
       </a>
     </td>
   </tr>
@@ -109,7 +109,11 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
 
 ---
 ## ➜ Fetured Projects
-
+<p align="center">
+  <a href="https://github.com/Krexilor/BasicCalculator">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Krexilor&repo=BasicCalculator&theme=radical&hide_border=true" alt="BasicCalculator Repo Card"/>
+  </a>
+</p>
 
 ---
 ## ➜ Github Stats
