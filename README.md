@@ -121,11 +121,6 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
 
 ---
 ## ➜ Fetured Projects
-<p align="center">
-  <a href="https://github.com/Krexilor/BasicCalculator">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Krexilor&repo=BasicCalculator&theme=radical&hide_border=true" alt="BasicCalculator Repo Card"/>
-  </a>
-</p>
 
 ---
 ## ➜ Github Stats
