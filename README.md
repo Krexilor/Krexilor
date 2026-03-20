@@ -1,7 +1,13 @@
 ![Banner](https://github.com/Krexilor/Krexilor/blob/main/Media/Banners/Github_Banner.png)
 
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?lines=Game+Developer;3D+Artist;Creative+Technologist;Always+Building...&center=true&width=500&height=40" />
+</p>
+
 ---
+
 ## ➜ Introduction
+
 Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
 
 <table>
@@ -20,8 +26,11 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
 </table>
 
 ---
+
 ## ➜ Technical & Creative Proficiency
+
 ### 🚀 Development Tools:-
+
 <table>
   <tr>
     <th>#</th>
@@ -44,6 +53,7 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
 </table>
 
 ### 🎨 Creative Tools:-
+
 <table>
   <tr>
     <th>#</th>
@@ -64,7 +74,7 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
     <td>Crafting clean UI mockups, social media visuals, and design layouts.</td>
   </tr>
   <tr>
-    <td><b>2</b></td>
+    <td><b>3</b></td>
     <td><img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Davinvi-Resolve.png" width="50"/></td>
     <td><b>Davinci Resolve</b></td>
     <td>Editing cinematic gameplay trailers, motion graphics, and developer showcases.</td>
@@ -72,6 +82,7 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
 </table>
 
 ### 🧠 Languages & Frameworks:-
+
 <table>
   <tr>
     <th>#</th>
@@ -86,7 +97,7 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
     <td>Developing automation tools, game-related scripts, and backend logic for simplifying tasks and enhancing development workflows.</td>
   </tr>
   <tr>
-    <td><b>1</b></td>
+    <td><b>2</b></td>
     <td><img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/C++.png" width="50"/></td>
     <td><b>C++</b></td>
     <td>I use C++ primarily for game development and high-performance projects where speed is critical.</td>
@@ -94,33 +105,48 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
 </table>
 
 ---
+
 ## ➜ Socials & Contacts
-<h4 align="center">🔗 Connect With Me</h4>
-<table align="center">
-  <tr>
-    <td align="center">
-      <a href="https://www.instagram.com/krexilor">
-        <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Instagram.png" width="40" alt="Instagram"/><br/>
-        <sub><b>Instagram</b></sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://x.com/krexilor">
-        <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/X.png" width="40" alt="X"/><br/>
-        <sub><b>X</b></sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://discord.com/users/1369319022918631525">
-        <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Discord.png" width="40" alt="Discord"/><br/>
-        <sub><b>Discord</b></sub>
-      </a>
-    </td>
-  </tr>
-</table>
+
+<p align="center">
+  <a href="https://www.instagram.com/krexilor">
+    <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Instagram.png" width="45" />
+  </a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://x.com/krexilor">
+    <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/X.png" width="45" />
+  </a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://discord.com/users/1369319022918631525">
+    <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Discord.png" width="45" />
+  </a>
+</p>
 
 ---
-## ➜ Github Stats
+
+## ➜ Github Analytics
+
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=krexilor&theme=radical&hide_border=true" alt="GitHub Streak" height="150"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=krexilor&show_icons=true&theme=radical&hide_border=true" height="150"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=krexilor&theme=radical&hide_border=true" height="150"/>
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=krexilor&layout=compact&theme=radical&hide_border=true" height="150"/>
+</p>
+
+---
+
+## ➜ Contribution Activity
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=krexilor&theme=react-dark&hide_border=true" />
+</p>
+
+---
+
+## ➜ 🐍 Snake Contribution Animation
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/krexilor/krexilor/output/github-contribution-grid-snake.svg" />
 </p>
