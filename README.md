@@ -19,44 +19,17 @@
 
 ## ➜ Technical & Creative Proficiency
 
-### 🚀 Development & Engine Tools
-<p align="center">
-  <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Unreal-Engine.png" width="65" alt="Unreal Engine"/> 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Blender.png" width="65" alt="Blender"/>
-</p>
-<p align="center">
-  <strong>Unreal Engine</strong> • Immersive Environments & Level Design <br>
-  <strong>Blender</strong> • 3D Asset Creation, Modeling & Animation
-</p>
+### 🚀 Game Development & 3D Design
+* <img src = "https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Unreal-Engine.png" width = "25" align = "center" /> **Unreal Engine** - Designing immersive environments and real-time gameplay mechanics.
+* <img src = "https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Blender.png" width = "25" align = "center" /> **Blender** - Modeling high-quality 3D assets, character rigging, and animation.
 
-<br>
+### 🎨 Creative Direction & Multimedia
+* <img src = "https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Krita.png" width = "25" align = "center" /> **Krita** - Digital illustration, hand-drawn textures, and concept art.
+* <img src = "https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Canva.png" width = "25" align = "center" /> **Canva** - UI/UX mockups, brand layouts, and social media design.
 
-### 🎨 Creative Suite
-<p align="center">
-  <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Krita.png" width="55" alt="Krita"/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Canva.png" width="55" alt="Canva"/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Davinvi-Resolve.png" width="55" alt="DaVinci Resolve"/>
-</p>
-<p align="center">
-  <strong>Krita</strong> (Textures & Concept Art) • <strong>Canva</strong> (UI & Layouts) • <strong>DaVinci Resolve</strong> (Cinematics)
-</p>
-
-<br>
-
-### 🧠 Languages & Logic
-<p align="center">
-  <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Python.png" width="50" alt="Python"/>
-  &nbsp;&nbsp; <code><b>Python</b></code> 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/C++.png" width="50" alt="C++"/>
-  &nbsp;&nbsp; <code><b>C++</b></code>
-</p>
-<p align="center">
-  Workflow Automation & High-Performance Game Logic
-</p>
+### 🧠 Programming & Logic
+* <img src = "https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Python.png" width = "25" align = "center" /> **Python** - Automation tools and backend logic to optimize workflows.
+* <img src = "https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/C++.png" width = "25" align = "center" /> **C++** - High-performance game logic and system-level development.
 
 ---
 
