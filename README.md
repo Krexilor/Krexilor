@@ -7,7 +7,6 @@
 </p>
 
 ---
-
 ## ➜ Introduction
 > [!IMPORTANT]
 > ### Hi, I’m Aarav Malik — also known as **Krexilor**
@@ -16,9 +15,7 @@
 > 🎨 **Visionary** blending technical skill with artistic vision to bring immersive environments and gameplay prototypes to life.<br>
 
 ---
-
 ## ➜ Technical & Creative Proficiency
-
 ### 🚀 Game Development & 3D Design
 * <img src = "https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Unreal-Engine.png" width = "25" align = "center" /> **Unreal Engine** - Designing immersive environments and real-time gameplay mechanics.
 * <img src = "https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Blender.png" width = "25" align = "center" /> **Blender** - Modeling high-quality 3D assets, character rigging, and animation.
@@ -32,55 +29,34 @@
 * <img src = "https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/C++.png" width = "25" align = "center" /> **C++** - High-performance game logic and system-level development.
 
 ---
-
 ## ➜ Socials & Contacts
-
-<p align="center">
-  <a href="https://www.instagram.com/krexilor">
-    <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Instagram.png" width="45" />
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://x.com/krexilor">
-    <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/X.png" width="45" />
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://discord.com/users/1369319022918631525">
-    <img src="https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Discord.png" width="45" />
-  </a>
-</p>
+* <img src = "https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Discord.png" width = "25" align = "center" /> - [@krexilor](https://discord.com/users/1369319022918631525) (Best for quick collaboration)
+* <img src = "https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/X.png" width = "25" align = "center" /> - [@krexilor](https://x.com/krexilor) (Development updates)
+* <img src = "https://github.com/Krexilor/Krexilor/blob/main/Media/Logos/Instagram.png" width = "25" align = "center" /> - [@krexilor](https://www.instagram.com/krexilor) (3D Art & Renders)
 
 ---
-
 ## ➜ Github Analytics
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=krexilor&show_icons=true&theme=radical&hide_border=true" height="150"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=krexilor&theme=radical&hide_border=true" height="150"/>
+<p align = "center">
+  <img src = "https://github-readme-stats.vercel.app/api?username=krexilor&show_icons=true&theme=radical&hide_border=true" height = "150"/>
+  <img src = "https://github-readme-streak-stats.herokuapp.com?user=krexilor&theme=radical&hide_border=true" height = "150"/>
 </p>
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=krexilor&layout=compact&theme=radical&hide_border=true" height="150"/>
+<p align = "center">
+  <img src = "https://github-readme-stats.vercel.app/api/top-langs/?username=krexilor&layout=compact&theme=radical&hide_border=true" height = "150"/>
 </p>
 
 ---
-
 ## ➜ Contribution Activity
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=krexilor&theme=react-dark&hide_border=true" />
+<p align = "center">
+  <img src = "https://github-readme-activity-graph.vercel.app/graph?username=krexilor&theme=react-dark&hide_border=true" />
 </p>
 
 ---
-
 ## ➜ 🐍 Snake Contribution
-
-<p align="center">
+<p align = "center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" 
-            srcset="https://raw.githubusercontent.com/krexilor/krexilor/output/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" 
-            srcset="https://raw.githubusercontent.com/krexilor/krexilor/output/github-contribution-grid-snake.svg" />
-    <img alt="github contribution snake" 
-         src="https://raw.githubusercontent.com/krexilor/krexilor/output/github-contribution-grid-snake.svg" />
+    <source media = "(prefers-color-scheme: dark)" srcset = "https://raw.githubusercontent.com/krexilor/krexilor/output/github-contribution-grid-snake-dark.svg" />
+    <source media = "(prefers-color-scheme: light)" srcset = "https://raw.githubusercontent.com/krexilor/krexilor/output/github-contribution-grid-snake.svg" />
+    <img alt = "github contribution snake" src = "https://raw.githubusercontent.com/krexilor/krexilor/output/github-contribution-grid-snake.svg" />
   </picture>
 </p>
