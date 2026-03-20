@@ -140,7 +140,7 @@ Hi, I’m **Aarav Malik** — also known online as **Krexilor**.
 
 ---
 
-## ➜ 🐍 Snake Contribution Animation
+## ➜ 🐍 Snake Contribution
 
 <p align="center">
   <picture>
