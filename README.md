@@ -36,13 +36,13 @@
 
 ---
 ## ➜ Github Analytics
-<p align = "center">
-  <img src = "https://github-readme-stats.vercel.app/api?username=krexilor&show_icons=true&theme=radical&hide_border=true" height = "150"/>
-  <img src = "https://github-readme-streak-stats.herokuapp.com?user=krexilor&theme=radical&hide_border=true" height = "150"/>
+<p align="center">
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=krexilor&show_icons=true&theme=radical&hide_border=true" height="150"/>
+  <img src="https://streak-stats.demolab.com?user=krexilor&theme=radical&hide_border=true" height="150"/>
 </p>
 
-<p align = "center">
-  <img src = "https://github-readme-stats.vercel.app/api/top-langs/?username=krexilor&layout=compact&theme=radical&hide_border=true" height = "150"/>
+<p align="center">
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=krexilor&layout=compact&theme=radical&hide_border=true" height="150"/>
 </p>
 
 ---
