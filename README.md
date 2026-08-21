@@ -48,7 +48,7 @@
 ---
 ## ➜ Contribution Activity
 <p align = "center">
-  <img src = "https://github-readme-activity-graph.vercel.app/graph?username=krexilor&theme=react-dark&hide_border=true" />
+  <img src="https://raw.githubusercontent.com/krexilor/krexilor/output/activity-graph.svg" />
 </p>
 
 ---
