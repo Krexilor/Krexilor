@@ -410,28 +410,86 @@ def generate_streak_panel(stats):
     panel = STREAK_PANEL
     x = panel["x"]
     y = panel["y"]
+    width = panel["width"]
+
+    current_streak = stats["current_streak"]
+    longest_streak = stats["longest_streak"]
+    total_contributions = stats["total_contributions"]
+
+    center_x = x + width / 2
+    center_y = y + 100
+    radius = 23
+    circumference = 2 * 3.141592653589793 * radius
+    progress = min(current_streak / max(longest_streak, 1), 1)
+    progress_length = circumference * progress
+
+    left_center = x + 75
+    right_center = x + width - 75
 
     parts = [panel_frame(panel, "Streak Stats")]
 
+    parts.append(
+        f'<line x1 = "{x + 130}" y1 = "{y + 60}" '
+        f'x2 = "{x + 130}" y2 = "{y + 158}" stroke = "{BORDER_COLOR}"/>'
+    )
+    parts.append(
+        f'<line x1 = "{x + width - 130}" y1 = "{y + 60}" '
+        f'x2 = "{x + width - 130}" y2 = "{y + 158}" stroke = "{BORDER_COLOR}"/>'
+    )
+
     parts.append(svg_text(
-        x + 100, y + 76, stats["current_streak"],
-        size = 28, color = ACCENT_MIDDLE, anchor = "middle", weight = "700"
+        left_center, y + 91, f"{total_contributions:,}",
+        size = 25, color = ACCENT_START, anchor = "middle", weight = "700"
     ))
     parts.append(svg_text(
-        x + 100, y + 92, "Current streak",
+        left_center, y + 115, "Total Contributions",
         size = 10, anchor = "middle"
+    ))
+    parts.append(svg_text(
+        left_center, y + 137, "Past Year",
+        size = 10, color = ACCENT_END, anchor = "middle"
+    ))
+
+    parts.append(
+        f'<circle cx = "{center_x}" cy = "{center_y}" r = "{radius}" '
+        f'fill = "none" stroke = "{MUTED_COLOR}" stroke-width = "5"/>'
+    )
+    parts.append(
+        f'<circle cx = "{center_x}" cy = "{center_y}" r = "{radius}" '
+        f'fill = "none" stroke = "{ACCENT_START}" stroke-width = "5" '
+        f'stroke-linecap = "round" stroke-dasharray = "{progress_length:.2f} {circumference:.2f}" '
+        f'transform = "rotate(-90 {center_x} {center_y})"/>'
+    )
+    parts.append(
+        f'<path d = "M {center_x} {center_y - radius - 13} '
+        f'C {center_x - 8} {center_y - radius - 3}, '
+        f'{center_x - 6} {center_y - radius + 3}, '
+        f'{center_x} {center_y - radius + 6} '
+        f'C {center_x + 6} {center_y - radius + 3}, '
+        f'{center_x + 8} {center_y - radius - 3}, '
+        f'{center_x} {center_y - radius - 13} Z" fill = "{ACCENT_START}"/>'
+    )
+    parts.append(svg_text(
+        center_x, center_y + 7, current_streak,
+        size = 22, color = ACCENT_MIDDLE, anchor = "middle", weight = "700"
+    ))
+    parts.append(svg_text(
+        center_x, y + 153, "Current Streak",
+        size = 11, color = ACCENT_MIDDLE, anchor = "middle", weight = "600"
     ))
 
     parts.append(svg_text(
-        x + 280, y + 76, stats["longest_streak"],
-        size = 28, color = ACCENT_END, anchor = "middle", weight = "700"
+        right_center, y + 91, longest_streak,
+        size = 25, color = ACCENT_START, anchor = "middle", weight = "700"
     ))
     parts.append(svg_text(
-        x + 280, y + 92, "Longest streak",
+        right_center, y + 115, "Longest Streak",
         size = 10, anchor = "middle"
     ))
-
-    parts.append(generate_contribution_grid(stats["days"]))
+    parts.append(svg_text(
+        right_center, y + 137, "Days",
+        size = 10, color = ACCENT_END, anchor = "middle"
+    ))
 
     return "".join(parts)
 
