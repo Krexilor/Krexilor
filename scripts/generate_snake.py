@@ -318,19 +318,18 @@ def generate_grid_svg(columns, eaten, duration, reset_time):
     return "".join(parts)
 
 def generate_snake_svg(route, duration):
-    values = ";".join(
-        "{:.2f},{:.2f}".format(*cell_position(column, row))
-        for column, row in route + route[:1]
-    )
-
     def segment(index, size, fill, extra = ""):
         offset = -(size - CELL_SIZE) / 2
-        begin = -index * SNAKE_STEP_SECONDS
+        shifted = route[-index:] + route[:-index] if index else route
+        values = ";".join(
+            "{:.2f},{:.2f}".format(*cell_position(column, row))
+            for column, row in shifted + shifted[:1]
+        )
 
         return (
             f'<rect x="{offset:g}" y="{offset:g}" width="{size}" height="{size}" '
             f'rx="3" fill="{fill}"{extra}>'
-            f'<animateMotion dur="{duration:.2f}s" begin="{begin:.2f}s" '
+            f'<animateMotion dur="{duration:.2f}s" '
             f'repeatCount="indefinite" calcMode="linear" values="{values}"/>'
             f'</rect>'
         )
