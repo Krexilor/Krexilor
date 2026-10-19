@@ -320,7 +320,10 @@ def generate_grid_svg(columns, eaten, duration, reset_time):
 def generate_snake_svg(route, duration):
     def segment(index, size, fill, extra = ""):
         offset = -(size - CELL_SIZE) / 2
-        shifted = route[-index:] + route[:-index] if index else route
+
+        # Head follows the route; body segments trail behind it.
+        shifted = route[-1 - index:] + route[:-1 - index] if index else route
+
         values = ";".join(
             "{:.2f},{:.2f}".format(*cell_position(column, row))
             for column, row in shifted + shifted[:1]
