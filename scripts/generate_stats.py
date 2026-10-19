@@ -1,13 +1,13 @@
 # LIBRARIES ----------------------------------------------------------------------------------------------------------------------------------------|
-import os
 import json
+import os
 import urllib.error
 import urllib.parse
 import urllib.request
-from html import escape
-from pathlib import Path
 from collections import Counter
 from datetime import date, datetime, timedelta, timezone
+from html import escape
+from pathlib import Path
 
 # EDITABLE GITHUB SETTINGS -------------------------------------------------------------------------------------------------------------------------|
 USERNAME = "Krexilor"
@@ -85,6 +85,7 @@ def request_json(url, headers = None):
     except urllib.error.URLError as error:
         raise RuntimeError(f"Unable to connect to GitHub API: {error}") from error
 
+
 def graphql(query, variables = None):
     if not TOKEN:
         raise RuntimeError(
@@ -117,7 +118,7 @@ def graphql(query, variables = None):
             f"GitHub GraphQL API returned HTTP {error.code}: {details}"
         ) from error
     except urllib.error.URLError as error:
-        raise RuntimeError(f"Unable to connect to GitHub GraphQL API: {error}") from error
+        raise RuntimeError(f"Unable to connect to GitHub API: {error}") from error
 
     if result.get("errors"):
         messages = "; ".join(
@@ -240,7 +241,10 @@ def calculate_streaks(days):
     today = date.today()
     current_streak = 0
     longest_streak = 0
+    longest_streak_start = None
+    longest_streak_end = None
     running_streak = 0
+    running_start = None
 
     first_day = min(
         (date.fromisoformat(day) for day in contributions_by_date),
@@ -252,15 +256,26 @@ def calculate_streaks(days):
     )
 
     day = first_day
+
     while day <= last_day:
         if contributions_by_date.get(day.isoformat(), 0) > 0:
+            if running_streak == 0:
+                running_start = day
+
             running_streak += 1
-            longest_streak = max(longest_streak, running_streak)
+
+            if running_streak > longest_streak:
+                longest_streak = running_streak
+                longest_streak_start = running_start
+                longest_streak_end = day
         else:
             running_streak = 0
+            running_start = None
+
         day += timedelta(days = 1)
 
     streak_day = today
+
     if contributions_by_date.get(today.isoformat(), 0) == 0:
         streak_day = today - timedelta(days = 1)
 
@@ -268,7 +283,12 @@ def calculate_streaks(days):
         current_streak += 1
         streak_day -= timedelta(days = 1)
 
-    return current_streak, longest_streak
+    return {
+        "current_streak": current_streak,
+        "longest_streak": longest_streak,
+        "longest_streak_start": longest_streak_start.isoformat() if longest_streak_start else None,
+        "longest_streak_end": longest_streak_end.isoformat() if longest_streak_end else None
+    }
 
 def calculate_languages(language_totals):
     total_bytes = sum(language_totals.values())
@@ -327,6 +347,7 @@ def svg_text(x, y, value, size = 11, color = DESCRIPTION_COLOR,
         f'font-weight = "{weight}" fill = "{color}">{esc(value)}</text>'
     )
 
+
 def panel_frame(panel, title):
     x = panel["x"]
     y = panel["y"]
@@ -373,39 +394,7 @@ def generate_stats_panel(stats):
 
     return "".join(parts)
 
-# CONTRIBUTION GRID AND STREAK PANEL ---------------------------------------------------------------------------------------------------------------|
-def generate_contribution_grid(days):
-    ordered_days = sorted(days, key = lambda item: item["date"])
-    recent_days = ordered_days[-(GRID_COLUMNS * GRID_ROWS):]
-    recent_days = [
-        {"date": "", "contributionCount": 0}
-        for _ in range(GRID_COLUMNS * GRID_ROWS - len(recent_days))
-    ] + recent_days
-
-    maximum = max(
-        (day["contributionCount"] for day in recent_days),
-        default = 1
-    )
-
-    parts = []
-
-    for index, day in enumerate(recent_days):
-        row, column = divmod(index, GRID_COLUMNS)
-        x = GRID_X + column * (GRID_CELL_SIZE + GRID_COLUMN_GAP)
-        y = GRID_Y + row * (GRID_CELL_SIZE + GRID_ROW_GAP)
-        count = day["contributionCount"]
-        color = activity_color(count, maximum)
-
-        parts.append(
-            f'<rect x = "{x}" y = "{y}" '
-            f'width = "{GRID_CELL_SIZE}" height = "{GRID_CELL_SIZE}" '
-            f'rx = "2" fill = "{color}">'
-            f'<title>{esc(day["date"])}: {count} contributions</title>'
-            f'</rect>'
-        )
-
-    return "".join(parts)
-
+# STREAK STATS PANEL --------------------------------------------------------------------------------------------------------------------------------|
 def generate_streak_panel(stats):
     panel = STREAK_PANEL
     x = panel["x"]
@@ -417,14 +406,27 @@ def generate_streak_panel(stats):
     total_contributions = stats["total_contributions"]
 
     center_x = x + width / 2
-    center_y = y + 100
-    radius = 23
+    center_y = y + 101
+    radius = 27
     circumference = 2 * 3.141592653589793 * radius
     progress = min(current_streak / max(longest_streak, 1), 1)
     progress_length = circumference * progress
 
     left_center = x + 75
     right_center = x + width - 75
+
+    longest_start = stats.get("longest_streak_start")
+    longest_end = stats.get("longest_streak_end")
+
+    if longest_start and longest_end:
+        start_date = date.fromisoformat(longest_start)
+        end_date = date.fromisoformat(longest_end)
+        date_range = (
+            f"{start_date.strftime('%b')} {start_date.day} - "
+            f"{end_date.strftime('%b')} {end_date.day}"
+        )
+    else:
+        date_range = "No streak recorded"
 
     parts = [panel_frame(panel, "Streak Stats")]
 
@@ -457,21 +459,13 @@ def generate_streak_panel(stats):
     parts.append(
         f'<circle cx = "{center_x}" cy = "{center_y}" r = "{radius}" '
         f'fill = "none" stroke = "{ACCENT_START}" stroke-width = "5" '
-        f'stroke-linecap = "round" stroke-dasharray = "{progress_length:.2f} {circumference:.2f}" '
+        f'stroke-linecap = "round" '
+        f'stroke-dasharray = "{progress_length:.2f} {circumference:.2f}" '
         f'transform = "rotate(-90 {center_x} {center_y})"/>'
-    )
-    parts.append(
-        f'<path d = "M {center_x} {center_y - radius - 13} '
-        f'C {center_x - 8} {center_y - radius - 3}, '
-        f'{center_x - 6} {center_y - radius + 3}, '
-        f'{center_x} {center_y - radius + 6} '
-        f'C {center_x + 6} {center_y - radius + 3}, '
-        f'{center_x + 8} {center_y - radius - 3}, '
-        f'{center_x} {center_y - radius - 13} Z" fill = "{ACCENT_START}"/>'
     )
     parts.append(svg_text(
         center_x, center_y + 7, current_streak,
-        size = 22, color = ACCENT_MIDDLE, anchor = "middle", weight = "700"
+        size = 23, color = ACCENT_MIDDLE, anchor = "middle", weight = "700"
     ))
     parts.append(svg_text(
         center_x, y + 153, "Current Streak",
@@ -487,7 +481,7 @@ def generate_streak_panel(stats):
         size = 10, anchor = "middle"
     ))
     parts.append(svg_text(
-        right_center, y + 137, "Days",
+        right_center, y + 137, date_range,
         size = 10, color = ACCENT_END, anchor = "middle"
     ))
 
@@ -561,7 +555,7 @@ def generate_language_legend(languages):
         parts.append(svg_text(
             405 if column == 0 else 605,
             row_y,
-            f'{language["percentage"]:.0f}%',
+            f'{language["percentage"]:.1f}%',
             size = 11,
             color = TEXT_COLOR,
             anchor = "end"
@@ -573,7 +567,6 @@ def generate_languages_panel(languages):
     panel = LANGUAGES_PANEL
 
     parts = [panel_frame(panel, "Most Used Languages")]
-
     parts.append(generate_language_bar(languages))
     parts.append(generate_language_legend(languages))
 
@@ -620,18 +613,14 @@ def main():
 
     print("Fetching contribution activity...")
     contributions = get_contribution_data()
-    current_streak, longest_streak = calculate_streaks(
-        contributions["days"]
-    )
+    streak_data = calculate_streaks(contributions["days"])
 
     stats = {
         "total_contributions": contributions["total_contributions"],
         "public_repositories": public_repositories,
         "pull_requests": contributions["pull_requests"],
         "issues": contributions["issues"],
-        "current_streak": current_streak,
-        "longest_streak": longest_streak,
-        "days": contributions["days"]
+        **streak_data
     }
 
     print("Calculating language usage...")
