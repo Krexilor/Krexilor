@@ -1,11 +1,11 @@
-
 # LIBRARIES ----------------------------------------------------------------------------------------------------------------------------------------|
 import json
 import os
+import random
 import urllib.error
 import urllib.request
-from datetime import date, datetime, timedelta, timezone
-from html import escape
+from collections import deque
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 # EDITABLE GITHUB SETTINGS -------------------------------------------------------------------------------------------------------------------------|
@@ -19,7 +19,6 @@ HEIGHT = 260
 BACKGROUND_START = "#191C36"
 BACKGROUND_END = "#111321"
 BORDER_COLOR = "#343957"
-EMPTY_COLOR = "#252A46"
 LEVEL_COLORS = [
     "#252A46",
     "#343D69",
@@ -32,8 +31,8 @@ SNAKE_BODY_END = "#A78BFA"
 SNAKE_HEAD_START = "#67DDFB"
 SNAKE_HEAD_END = "#6C8CFF"
 
-# GRID SETTINGS -------------------------------------------------------------------------------------------------------------------------------------|
-GRID_COLUMNS = 52
+# GRID SETTINGS ------------------------------------------------------------------------------------------------------------------------------------|
+GRID_COLUMNS = 53
 GRID_ROWS = 7
 CELL_SIZE = 13
 CELL_GAP_X = 3
@@ -45,11 +44,15 @@ GRID_HEIGHT = GRID_ROWS * CELL_SIZE + (GRID_ROWS - 1) * CELL_GAP_Y
 GRID_X = (WIDTH - GRID_WIDTH) / 2
 GRID_Y = (HEIGHT - GRID_HEIGHT) / 2
 
+# SNAKE SETTINGS -----------------------------------------------------------------------------------------------------------------------------------|
 SNAKE_LENGTH = 5
-SNAKE_DURATION = 42
+SNAKE_WALK_STEPS = 160
+SNAKE_STEP_SECONDS = 0.25
+SNAKE_STRAIGHT_CHANCE = 0.6
+DIRECTIONS = [(1, 0), (-1, 0), (0, 1), (0, -1)]
 OUTPUT_PATH = Path(__file__).resolve().parents[1] / "assets" / "contribution-snake.svg"
 
-# GITHUB API FUNCTIONS ------------------------------------------------------------------------------------------------------------------------------|
+# GITHUB API FUNCTIONS -----------------------------------------------------------------------------------------------------------------------------|
 def graphql(query, variables):
     if not TOKEN:
         raise RuntimeError(
@@ -95,9 +98,9 @@ def graphql(query, variables):
 
     return result["data"]
 
-def get_contributions():
-    today = date.today()
-    start_date = today - timedelta(days = 363)
+def get_contribution_weeks():
+    now = datetime.now(timezone.utc)
+    start = now - timedelta(days = 364)
 
     query = """
     query($username: String!, $from: DateTime!, $to: DateTime!) {
@@ -106,7 +109,7 @@ def get_contributions():
                 contributionCalendar {
                     weeks {
                         contributionDays {
-                            date
+                            weekday
                             contributionCount
                         }
                     }
@@ -118,35 +121,28 @@ def get_contributions():
 
     data = graphql(query, {
         "username": USERNAME,
-        "from": datetime.combine(
-            start_date,
-            datetime.min.time(),
-            tzinfo = timezone.utc
-        ).isoformat(),
-        "to": datetime.combine(
-            today,
-            datetime.max.time(),
-            tzinfo = timezone.utc
-        ).isoformat()
+        "from": start.isoformat(),
+        "to": now.isoformat()
     })
 
     user = data.get("user")
     if not user:
         raise RuntimeError(f"GitHub user '{USERNAME}' was not found.")
 
-    weeks = (
-        user["contributionsCollection"]["contributionCalendar"]["weeks"]
-    )
+    weeks = user["contributionsCollection"]["contributionCalendar"]["weeks"]
+    columns = []
 
-    contributions = {}
+    for week in weeks[-GRID_COLUMNS:]:
+        column = [None] * GRID_ROWS
 
-    for week in weeks:
         for day in week["contributionDays"]:
-            contributions[day["date"]] = day["contributionCount"]
+            column[day["weekday"]] = day["contributionCount"]
 
-    return contributions
+        columns.append(column)
 
-# CONTRIBUTION GRID FUNCTIONS -----------------------------------------------------------------------------------------------------------------------|
+    return columns
+
+# CONTRIBUTION GRID FUNCTIONS ----------------------------------------------------------------------------------------------------------------------|
 def contribution_level(count, maximum):
     if count <= 0:
         return 0
@@ -165,44 +161,26 @@ def contribution_level(count, maximum):
 
     return 4
 
-def build_grid(contributions):
-    today = date.today()
-    start_date = today - timedelta(days = 363)
-    start_date -= timedelta(days = (start_date.weekday() + 1) % 7)
+def cell_position(column, row):
+    return (
+        GRID_X + column * GRID_CELL_STEP_X,
+        GRID_Y + row * GRID_CELL_STEP_Y
+    )
 
-    maximum = max(contributions.values(), default = 0)
-    grid = []
-
-    for column in range(GRID_COLUMNS):
-        week = []
-
-        for row in range(GRID_ROWS):
-            current_date = start_date + timedelta(
-                days = column * 7 + row
-            )
-
-            count = contributions.get(current_date.isoformat(), 0)
-            level = contribution_level(count, maximum)
-
-            week.append({
-                "date": current_date,
-                "count": count,
-                "level": level
-            })
-
-        grid.append(week)
-
-    return grid
-
-def generate_grid_svg(grid):
+def generate_grid_svg(columns):
+    maximum = max(
+        (count for column in columns for count in column if count is not None),
+        default = 0
+    )
     parts = []
 
-    for column, week in enumerate(grid):
-        x = GRID_X + column * GRID_CELL_STEP_X
+    for column_index, column in enumerate(columns):
+        for row_index, count in enumerate(column):
+            if count is None:
+                continue
 
-        for row, cell in enumerate(week):
-            y = GRID_Y + (GRID_ROWS - 1 - row) * GRID_CELL_STEP_Y
-            color = LEVEL_COLORS[cell["level"]]
+            x, y = cell_position(column_index, row_index)
+            color = LEVEL_COLORS[contribution_level(count, maximum)]
 
             parts.append(
                 f'<rect x = "{x:.2f}" y = "{y:.2f}" '
@@ -212,80 +190,114 @@ def generate_grid_svg(grid):
 
     return "".join(parts)
 
-# SNAKE ANIMATION FUNCTIONS -------------------------------------------------------------------------------------------------------------------------|
-def snake_path():
-    points = []
+# SNAKE ROUTE FUNCTIONS ----------------------------------------------------------------------------------------------------------------------------|
+def in_bounds(cell):
+    return 0 <= cell[0] < GRID_COLUMNS and 0 <= cell[1] < GRID_ROWS
 
-    for column in range(GRID_COLUMNS):
-        x = GRID_X + column * GRID_CELL_STEP_X + CELL_SIZE / 2
+def random_walk():
+    head = (random.randrange(GRID_COLUMNS), random.randrange(GRID_ROWS))
+    direction = random.choice(DIRECTIONS)
+    route = [head]
 
-        if column % 2 == 0:
-            rows = range(GRID_ROWS - 1, -1, -1)
+    while len(route) < SNAKE_WALK_STEPS:
+        body = set(route[-SNAKE_LENGTH:])
+        options = []
+
+        for option in DIRECTIONS:
+            target = (head[0] + option[0], head[1] + option[1])
+
+            if in_bounds(target) and target not in body:
+                options.append(option)
+
+        if not options:
+            break
+
+        if direction in options and random.random() < SNAKE_STRAIGHT_CHANCE:
+            pass
         else:
-            rows = range(GRID_ROWS)
+            direction = random.choice(options)
 
-        for row in rows:
-            y = GRID_Y + row * GRID_CELL_STEP_Y + CELL_SIZE / 2
-            points.append((x, y))
+        head = (head[0] + direction[0], head[1] + direction[1])
+        route.append(head)
 
-    path = f"M {points[0][0]:.2f} {points[0][1]:.2f}"
+    return route
 
-    for x, y in points[1:]:
-        path += f" L {x:.2f} {y:.2f}"
+def path_back(start, goal):
+    queue = deque([start])
+    previous = {start: None}
 
-    path += f" L {points[0][0]:.2f} {points[0][1]:.2f}"
+    while queue:
+        current = queue.popleft()
 
-    return path
+        if current == goal:
+            break
 
+        for direction in DIRECTIONS:
+            target = (current[0] + direction[0], current[1] + direction[1])
+
+            if in_bounds(target) and target not in previous:
+                previous[target] = current
+                queue.append(target)
+
+    path = []
+    current = goal
+
+    while current is not None:
+        path.append(current)
+        current = previous[current]
+
+    return path[::-1]
+
+def snake_route():
+    walk = random_walk()
+    return_path = path_back(walk[-1], walk[0])
+
+    return walk + return_path[1:-1]
+
+# SNAKE SVG FUNCTIONS ------------------------------------------------------------------------------------------------------------------------------|
 def generate_snake_svg():
-    path = escape(snake_path(), quote = True)
-    parts = [
-        f'<path id = "snakeRoute" d = "{path}" fill = "none"/>'
-    ]
+    route = snake_route()
+    duration = len(route) * SNAKE_STEP_SECONDS
+    values = ";".join(
+        "{:.2f},{:.2f}".format(*cell_position(column, row))
+        for column, row in route
+    )
 
-    for index in range(SNAKE_LENGTH - 1, -1, -1):
-        color = SNAKE_BODY_START if index % 2 == 0 else SNAKE_BODY_END
-        begin = -(index * SNAKE_DURATION / (GRID_COLUMNS * GRID_ROWS))
+    def segment(index, fill, extra = ""):
+        begin = -index * SNAKE_STEP_SECONDS
 
-        parts.append(
+        return (
             f'<rect width = "{CELL_SIZE}" height = "{CELL_SIZE}" '
-            f'rx = "3" fill = "{color}" opacity = ".98">'
-            f'<animateMotion dur = "{SNAKE_DURATION}s" '
-            f'begin = "{begin:.3f}s" repeatCount = "indefinite" '
-            f'rotate = "0" calcMode = "discrete">'
-            f'<mpath href = "#snakeRoute"/>'
-            f'</animateMotion>'
+            f'rx = "3" fill = "{fill}" {extra}>'
+            f'<animateMotion dur = "{duration:.2f}s" begin = "{begin:.2f}s" '
+            f'repeatCount = "indefinite" calcMode = "discrete" '
+            f'values = "{values}"/>'
             f'</rect>'
         )
 
+    parts = []
+
+    for index in range(SNAKE_LENGTH - 1, 0, -1):
+        color = SNAKE_BODY_START if index % 2 == 0 else SNAKE_BODY_END
+        parts.append(segment(index, color))
+
     parts.append(
-        f'<rect width = "{CELL_SIZE}" height = "{CELL_SIZE}" '
-        f'rx = "3" fill = "{SNAKE_HEAD_START}" '
-        f'stroke = "{SNAKE_HEAD_END}" stroke-width = "1.5">'
-        f'<animateMotion dur = "{SNAKE_DURATION}s" '
-        f'repeatCount = "indefinite" rotate = "0" calcMode = "discrete">'
-        f'<mpath href = "#snakeRoute"/>'
-        f'</animateMotion>'
-        f'</rect>'
+        segment(
+            0,
+            SNAKE_HEAD_START,
+            f'stroke = "{SNAKE_HEAD_END}" stroke-width = "1.5"'
+        )
     )
 
     return "".join(parts)
 
-# SVG GENERATION FUNCTIONS ---------------------------------------------------------------------------------------------------------------------------|
-def generate_svg(grid):
-    return f'''<svg xmlns = "http://www.w3.org/2000/svg" xmlns:xlink = "http://www.w3.org/1999/xlink" width = "{WIDTH}" height = "{HEIGHT}" viewBox = "0 0 {WIDTH} {HEIGHT}">
+# SVG GENERATION FUNCTIONS -------------------------------------------------------------------------------------------------------------------------|
+def generate_svg(columns):
+    return f'''<svg xmlns = "http://www.w3.org/2000/svg" width = "{WIDTH}" height = "{HEIGHT}" viewBox = "0 0 {WIDTH} {HEIGHT}">
     <defs>
         <linearGradient id = "background" x1 = "0%" y1 = "0%" x2 = "100%" y2 = "100%">
             <stop offset = "0%" stop-color = "{BACKGROUND_START}"/>
             <stop offset = "100%" stop-color = "{BACKGROUND_END}"/>
-        </linearGradient>
-        <linearGradient id = "snakeBody" x1 = "0%" y1 = "0%" x2 = "100%" y2 = "0%">
-            <stop offset = "0%" stop-color = "{SNAKE_BODY_START}"/>
-            <stop offset = "100%" stop-color = "{SNAKE_BODY_END}"/>
-        </linearGradient>
-        <linearGradient id = "snakeHead" x1 = "0%" y1 = "0%" x2 = "100%" y2 = "100%">
-            <stop offset = "0%" stop-color = "{SNAKE_HEAD_START}"/>
-            <stop offset = "100%" stop-color = "{SNAKE_HEAD_END}"/>
         </linearGradient>
         <filter id = "snakeGlow" x = "-50%" y = "-50%" width = "200%" height = "200%">
             <feGaussianBlur stdDeviation = "2" result = "blur"/>
@@ -297,23 +309,25 @@ def generate_svg(grid):
     </defs>
     <rect width = "{WIDTH}" height = "{HEIGHT}" rx = "20" fill = "url(#background)"/>
     <rect x = "1" y = "1" width = "{WIDTH - 2}" height = "{HEIGHT - 2}" rx = "19" fill = "none" stroke = "{BORDER_COLOR}"/>
-    {generate_grid_svg(grid)}
+    {generate_grid_svg(columns)}
     <g filter = "url(#snakeGlow)">
         {generate_snake_svg()}
     </g>
 </svg>
 '''
 
-# SCRIPT EXECUTION ----------------------------------------------------------------------------------------------------------------------------------|
+# SCRIPT EXECUTION ---------------------------------------------------------------------------------------------------------------------------------|
 def main():
     print(f"Fetching contribution data for {USERNAME}...")
-    contributions = get_contributions()
+    columns = get_contribution_weeks()
 
-    print("Building vertical contribution grid...")
-    grid = build_grid(contributions)
+    if len(columns) != GRID_COLUMNS:
+        raise RuntimeError(
+            f"Expected {GRID_COLUMNS} weeks, GitHub returned {len(columns)}."
+        )
 
     print("Generating contribution snake SVG...")
-    svg = generate_svg(grid)
+    svg = generate_svg(columns)
 
     OUTPUT_PATH.parent.mkdir(parents = True, exist_ok = True)
     OUTPUT_PATH.write_text(svg, encoding = "utf-8")
