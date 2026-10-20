@@ -109,6 +109,7 @@ def graphql(query, variables):
 
     return result["data"]
 
+
 def get_contribution_weeks():
     now = datetime.now(timezone.utc)
     start = now - timedelta(days = 364)
@@ -157,8 +158,10 @@ def get_contribution_weeks():
 def in_bounds(cell):
     return 0 <= cell[0] < GRID_COLUMNS and 0 <= cell[1] < GRID_ROWS
 
+
 def move(cell, direction):
     return (cell[0] + direction[0], cell[1] + direction[1])
+
 
 def step_options(route):
     head = route[-1]
@@ -171,6 +174,7 @@ def step_options(route):
 
         if options:
             return options
+
 
 def choose_direction(route, direction, goal):
     head = route[-1]
@@ -188,6 +192,7 @@ def choose_direction(route, direction, goal):
         return direction
 
     return random.choice(options)
+
 
 def path_back(start, goal):
     queue = deque([start])
@@ -214,6 +219,7 @@ def path_back(start, goal):
         current = previous[current]
 
     return path[::-1]
+
 
 def build_route(columns):
     cells = [(c, r) for c in range(GRID_COLUMNS) for r in range(GRID_ROWS)]
@@ -256,6 +262,7 @@ def build_route(columns):
 def esc(value):
     return escape(str(value), quote = True)
 
+
 def contribution_level(count, maximum):
     if count <= 0:
         return 0
@@ -274,11 +281,13 @@ def contribution_level(count, maximum):
 
     return 4
 
+
 def cell_position(column, row):
     return (
         GRID_X + column * GRID_CELL_STEP_X,
         GRID_Y + row * GRID_CELL_STEP_Y
     )
+
 
 def eat_animation(eaten_step, duration, reset_time):
     start = max(0, eaten_step * SNAKE_STEP_SECONDS - SNAKE_STEP_SECONDS / 2)
@@ -289,6 +298,7 @@ def eat_animation(eaten_step, duration, reset_time):
         f'<animate attributeName="opacity" values="1;1;0;0;1;1" '
         f'keyTimes="{key_times}" dur="{duration:.2f}s" repeatCount="indefinite"/>'
     )
+
 
 def generate_grid_svg(columns, eaten, duration, reset_time):
     maximum = max(
@@ -317,6 +327,7 @@ def generate_grid_svg(columns, eaten, duration, reset_time):
 
     return "".join(parts)
 
+
 def generate_snake_svg(route, duration):
     def segment(index, size, fill, extra = ""):
         cycle = route[:-1]
@@ -328,7 +339,7 @@ def generate_snake_svg(route, duration):
         )
 
         return (
-            f'<rect x="{offset:g}" y="{offset:g}" width="{size}" height="{size}" '
+            f'<rect x="0" y="0" width="{size}" height="{size}" '
             f'rx="3" fill="{fill}"{extra}>'
             f'<animateMotion dur="{duration:.2f}s" '
             f'repeatCount="indefinite" calcMode="linear" values="{values}"/>'
@@ -346,6 +357,7 @@ def generate_snake_svg(route, duration):
     )
 
     return "".join(parts)
+
 
 def generate_svg(columns):
     route, eaten, reset_step = build_route(columns)
@@ -405,6 +417,7 @@ def main():
     OUTPUT_PATH.write_text(svg, encoding = "utf-8")
 
     print(f"Generated {OUTPUT_PATH}")
+
 
 if __name__ == "__main__":
     main()
