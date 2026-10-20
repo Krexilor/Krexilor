@@ -321,8 +321,7 @@ def generate_snake_svg(route, duration):
     def segment(index, size, fill, extra = ""):
         offset = -(size - CELL_SIZE) / 2
 
-        # Head follows the route; body segments trail behind it.
-        shifted = route[-1 - index:] + route[:-1 - index] if index else route
+        shifted = route[-1 - index:] + route[:len(route) - index] if index else route
 
         values = ";".join(
             "{:.2f},{:.2f}".format(*cell_position(column, row))
