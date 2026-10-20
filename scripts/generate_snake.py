@@ -248,7 +248,7 @@ def build_route(columns):
         direction = choose_direction(route, direction, None)
         route.append(move(route[-1], direction))
 
-    route += path_back(route[-1], route[0])[1:-1]
+    route += path_back(route[-1], route[0])[1:]
 
     return route, eaten, reset_step
 
@@ -319,9 +319,8 @@ def generate_grid_svg(columns, eaten, duration, reset_time):
 
 def generate_snake_svg(route, duration):
     def segment(index, size, fill, extra = ""):
-        offset = -(size - CELL_SIZE) / 2
-
-        shifted = route[-1 - index:] + route[:len(route) - index] if index else route
+        cycle = route[:-1]
+        shifted = cycle[-index:] + cycle[:-index] if index else cycle
 
         values = ";".join(
             "{:.2f},{:.2f}".format(*cell_position(column, row))
@@ -350,7 +349,7 @@ def generate_snake_svg(route, duration):
 
 def generate_svg(columns):
     route, eaten, reset_step = build_route(columns)
-    duration = len(route) * SNAKE_STEP_SECONDS
+    duration = (len(route) - 1) * SNAKE_STEP_SECONDS
     reset_time = reset_step * SNAKE_STEP_SECONDS + RESET_PAUSE
     grid_svg = generate_grid_svg(columns, eaten, duration, reset_time)
     snake_svg = generate_snake_svg(route, duration)
