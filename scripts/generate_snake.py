@@ -57,6 +57,7 @@ WANDER_CHANCE = 0.15
 STRAIGHT_CHANCE = 0.6
 FREE_STEPS = 30
 MAX_STEPS = 3000
+MAX_ATTEMPTS = 500
 EAT_FADE = 0.25
 RESET_PAUSE = 0.4
 RESET_FADE = 0.8
@@ -109,7 +110,6 @@ def graphql(query, variables):
 
     return result["data"]
 
-
 def get_contribution_weeks():
     now = datetime.now(timezone.utc)
     start = now - timedelta(days = 364)
@@ -152,33 +152,57 @@ def get_contribution_weeks():
 
         columns.append(column)
 
+    while len(columns) < GRID_COLUMNS:
+        columns.insert(0, [None] * GRID_ROWS)
+
     return columns
 
 # SNAKE ROUTE FUNCTIONS ----------------------------------------------------------------------------------------------------------------------------|
 def in_bounds(cell):
     return 0 <= cell[0] < GRID_COLUMNS and 0 <= cell[1] < GRID_ROWS
 
-
 def move(cell, direction):
     return (cell[0] + direction[0], cell[1] + direction[1])
 
+def body_cells(route):
+    return set(route[-(SNAKE_LENGTH - 1):])
+
+def open_space(start, blocked):
+    seen = {start}
+    queue = deque([start])
+
+    while queue:
+        current = queue.popleft()
+
+        for direction in DIRECTIONS:
+            target = move(current, direction)
+
+            if in_bounds(target) and target not in blocked and target not in seen:
+                seen.add(target)
+                queue.append(target)
+
+    return len(seen)
 
 def step_options(route):
     head = route[-1]
+    body = body_cells(route)
+    options = [
+        direction for direction in DIRECTIONS
+        if in_bounds(move(head, direction)) and move(head, direction) not in body
+    ]
+    roomy = [
+        direction for direction in options
+        if open_space(move(head, direction), body | {move(head, direction)}) >= SNAKE_LENGTH
+    ]
 
-    for blocked in (set(route[-SNAKE_LENGTH:]), set(route[-2:-1]), set()):
-        options = [
-            direction for direction in DIRECTIONS
-            if in_bounds(move(head, direction)) and move(head, direction) not in blocked
-        ]
-
-        if options:
-            return options
-
+    return roomy or options
 
 def choose_direction(route, direction, goal):
     head = route[-1]
     options = step_options(route)
+
+    if not options:
+        return None
 
     if goal and random.random() > WANDER_CHANCE:
         def distance(option):
@@ -193,10 +217,11 @@ def choose_direction(route, direction, goal):
 
     return random.choice(options)
 
-
-def path_back(start, goal):
-    queue = deque([start])
-    previous = {start: None}
+def path_to(route, goal):
+    head = route[-1]
+    blocked = body_cells(route) - {head}
+    queue = deque([head])
+    previous = {head: None}
 
     while queue:
         current = queue.popleft()
@@ -207,9 +232,12 @@ def path_back(start, goal):
         for direction in DIRECTIONS:
             target = move(current, direction)
 
-            if in_bounds(target) and target not in previous:
+            if in_bounds(target) and target not in previous and target not in blocked:
                 previous[target] = current
                 queue.append(target)
+
+    if goal not in previous:
+        return None
 
     path = []
     current = goal
@@ -220,17 +248,15 @@ def path_back(start, goal):
 
     return path[::-1]
 
-
 def build_route(columns):
-    cells = [(c, r) for c in range(GRID_COLUMNS) for r in range(GRID_ROWS)]
     targets = {
         (c, r) for c, column in enumerate(columns)
         for r, count in enumerate(column) if count
     }
 
-    start = random.choice([cell for cell in cells if cell not in targets] or cells)
+    start = (GRID_COLUMNS - 1, random.randrange(GRID_ROWS))
     route = [start]
-    direction = random.choice(DIRECTIONS)
+    state = {"direction": random.choice(DIRECTIONS)}
     remaining = set(targets)
     eaten = {}
 
@@ -238,30 +264,74 @@ def build_route(columns):
         remaining.remove(start)
         eaten[start] = 0
 
-    while remaining and len(route) < MAX_STEPS:
-        head = route[-1]
-        goal = min(remaining, key = lambda t: abs(t[0] - head[0]) + abs(t[1] - head[1]))
-        direction = choose_direction(route, direction, goal)
-        route.append(move(head, direction))
+    def advance(goal):
+        chosen = choose_direction(route, state["direction"], goal)
+
+        if chosen is None:
+            return False
+
+        state["direction"] = chosen
+        route.append(move(route[-1], chosen))
 
         if route[-1] in remaining:
             remaining.remove(route[-1])
             eaten[route[-1]] = len(route) - 1
 
-    reset_step = len(route) - 1
+        return True
 
     for _ in range(FREE_STEPS):
-        direction = choose_direction(route, direction, None)
-        route.append(move(route[-1], direction))
+        if not advance(None):
+            return None
 
-    route += path_back(route[-1], route[0])[1:]
+    while remaining and len(route) < MAX_STEPS:
+        head = route[-1]
+        goal = min(remaining, key = lambda t: abs(t[0] - head[0]) + abs(t[1] - head[1]))
 
-    return route, eaten, reset_step
+        if not advance(goal):
+            return None
+
+    path = path_to(route, start)
+
+    if path is None:
+        return None
+
+    route += path[1:]
+
+    return route, eaten
+
+def is_valid_loop(route):
+    cycle = route[:-1]
+    count = len(cycle)
+
+    if count <= SNAKE_LENGTH:
+        return False
+
+    for index in range(count):
+        current = cycle[index]
+        following = cycle[(index + 1) % count]
+
+        if abs(current[0] - following[0]) + abs(current[1] - following[1]) != 1:
+            return False
+
+        window = {cycle[(index - offset) % count] for offset in range(SNAKE_LENGTH)}
+
+        if len(window) != SNAKE_LENGTH:
+            return False
+
+    return True
+
+def generate_route(columns):
+    for _ in range(MAX_ATTEMPTS):
+        result = build_route(columns)
+
+        if result and is_valid_loop(result[0]):
+            return result
+
+    raise RuntimeError("Unable to build a collision-free snake route.")
 
 # SVG GENERATION FUNCTIONS -------------------------------------------------------------------------------------------------------------------------|
 def esc(value):
     return escape(str(value), quote = True)
-
 
 def contribution_level(count, maximum):
     if count <= 0:
@@ -281,26 +351,26 @@ def contribution_level(count, maximum):
 
     return 4
 
-
 def cell_position(column, row):
     return (
         GRID_X + column * GRID_CELL_STEP_X,
         GRID_Y + row * GRID_CELL_STEP_Y
     )
 
-
-def eat_animation(eaten_step, duration, reset_time):
-    start = max(0, eaten_step * SNAKE_STEP_SECONDS - SNAKE_STEP_SECONDS / 2)
-    times = [0, start, start + EAT_FADE, reset_time, reset_time + RESET_FADE, duration]
-    key_times = ";".join(f"{time / duration:.4f}" for time in times)
+def eat_animation(eaten_step, duration):
+    start = max(
+        RESET_PAUSE + RESET_FADE,
+        eaten_step * SNAKE_STEP_SECONDS - SNAKE_STEP_SECONDS / 2
+    )
+    times = [0, RESET_PAUSE, RESET_PAUSE + RESET_FADE, start, start + EAT_FADE, duration]
+    key_times = ";".join(f"{min(time, duration) / duration:.4f}" for time in times)
 
     return (
-        f'<animate attributeName="opacity" values="1;1;0;0;1;1" '
+        f'<animate attributeName="opacity" values="0;0;1;1;0;0" '
         f'keyTimes="{key_times}" dur="{duration:.2f}s" repeatCount="indefinite"/>'
     )
 
-
-def generate_grid_svg(columns, eaten, duration, reset_time):
+def generate_grid_svg(columns, eaten, duration):
     maximum = max(
         (count for column in columns for count in column if count is not None),
         default = 0
@@ -318,7 +388,7 @@ def generate_grid_svg(columns, eaten, duration, reset_time):
             animation = ""
 
             if count > 0 and cell in eaten:
-                animation = eat_animation(eaten[cell], duration, reset_time)
+                animation = eat_animation(eaten[cell], duration)
 
             parts.append(
                 f'<rect x="{x:.2f}" y="{y:.2f}" width="{CELL_SIZE}" height="{CELL_SIZE}" '
@@ -327,14 +397,17 @@ def generate_grid_svg(columns, eaten, duration, reset_time):
 
     return "".join(parts)
 
-
 def generate_snake_svg(route, duration):
     def segment(index, size, fill, extra = ""):
         cycle = route[:-1]
         shifted = cycle[-index:] + cycle[:-index] if index else cycle
+        offset = (CELL_SIZE - size) / 2
 
         values = ";".join(
-            "{:.2f},{:.2f}".format(*cell_position(column, row))
+            "{:.2f},{:.2f}".format(
+                cell_position(column, row)[0] + offset,
+                cell_position(column, row)[1] + offset
+            )
             for column, row in shifted + shifted[:1]
         )
 
@@ -358,12 +431,10 @@ def generate_snake_svg(route, duration):
 
     return "".join(parts)
 
-
 def generate_svg(columns):
-    route, eaten, reset_step = build_route(columns)
+    route, eaten = generate_route(columns)
     duration = (len(route) - 1) * SNAKE_STEP_SECONDS
-    reset_time = reset_step * SNAKE_STEP_SECONDS + RESET_PAUSE
-    grid_svg = generate_grid_svg(columns, eaten, duration, reset_time)
+    grid_svg = generate_grid_svg(columns, eaten, duration)
     snake_svg = generate_snake_svg(route, duration)
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}">
@@ -405,11 +476,6 @@ def main():
     print(f"Fetching contribution data for {USERNAME}...")
     columns = get_contribution_weeks()
 
-    if len(columns) != GRID_COLUMNS:
-        raise RuntimeError(
-            f"Expected {GRID_COLUMNS} weeks, GitHub returned {len(columns)}."
-        )
-
     print("Generating contribution snake SVG...")
     svg = generate_svg(columns)
 
@@ -417,7 +483,6 @@ def main():
     OUTPUT_PATH.write_text(svg, encoding = "utf-8")
 
     print(f"Generated {OUTPUT_PATH}")
-
 
 if __name__ == "__main__":
     main()
