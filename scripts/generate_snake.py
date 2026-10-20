@@ -53,14 +53,16 @@ GRID_Y = 104
 SNAKE_LENGTH = 5
 HEAD_SIZE = CELL_SIZE + 3
 SNAKE_STEP_SECONDS = 0.2
-WANDER_CHANCE = 0.15
+ROUNDS = 3
+WANDER_CHANCE = 0.2
 STRAIGHT_CHANCE = 0.6
-FREE_STEPS = 30
-MAX_STEPS = 3000
-MAX_ATTEMPTS = 500
+RANDOM_TARGET_CHANCE = 0.35
+FREE_STEPS = 12
+MAX_STEPS = 1500
+MAX_ATTEMPTS = 200
 EAT_FADE = 0.25
-RESET_PAUSE = 0.4
 RESET_FADE = 0.8
+FADE_STEPS = int(RESET_FADE / SNAKE_STEP_SECONDS) + 2
 DIRECTIONS = [(1, 0), (-1, 0), (0, 1), (0, -1)]
 OUTPUT_PATH = Path(__file__).resolve().parents[1] / "assets" / "contribution-snake.svg"
 
@@ -167,7 +169,7 @@ def move(cell, direction):
 def body_cells(route):
     return set(route[-(SNAKE_LENGTH - 1):])
 
-def open_space(start, blocked):
+def has_room(start, blocked):
     seen = {start}
     queue = deque([start])
 
@@ -181,7 +183,10 @@ def open_space(start, blocked):
                 seen.add(target)
                 queue.append(target)
 
-    return len(seen)
+                if len(seen) >= SNAKE_LENGTH:
+                    return True
+
+    return len(seen) >= SNAKE_LENGTH
 
 def step_options(route):
     head = route[-1]
@@ -192,7 +197,7 @@ def step_options(route):
     ]
     roomy = [
         direction for direction in options
-        if open_space(move(head, direction), body | {move(head, direction)}) >= SNAKE_LENGTH
+        if has_room(move(head, direction), body | {move(head, direction)})
     ]
 
     return roomy or options
@@ -216,6 +221,23 @@ def choose_direction(route, direction, goal):
         return direction
 
     return random.choice(options)
+
+def pick_goal(route, state, remaining):
+    goal = state.get("goal")
+
+    if goal in remaining:
+        return goal
+
+    head = route[-1]
+
+    if random.random() < RANDOM_TARGET_CHANCE:
+        goal = random.choice(list(remaining))
+    else:
+        goal = min(remaining, key = lambda t: abs(t[0] - head[0]) + abs(t[1] - head[1]))
+
+    state["goal"] = goal
+
+    return goal
 
 def path_to(route, goal):
     head = route[-1]
@@ -248,56 +270,75 @@ def path_to(route, goal):
 
     return path[::-1]
 
+def advance(route, state, goal, remaining, eaten, start_step):
+    chosen = choose_direction(route, state["direction"], goal)
+
+    if chosen is None:
+        return False
+
+    state["direction"] = chosen
+    route.append(move(route[-1], chosen))
+    step = len(route) - 1
+
+    if route[-1] in remaining and step - start_step >= FADE_STEPS:
+        remaining.remove(route[-1])
+        eaten[route[-1]] = step
+
+    return True
+
+def return_path(route, final):
+    if final:
+        return path_to(route, route[0])
+
+    rows = list(range(GRID_ROWS))
+    random.shuffle(rows)
+
+    for row in rows:
+        path = path_to(route, (0, row))
+
+        if path:
+            return path
+
+    return None
+
 def build_route(columns):
     targets = {
         (c, r) for c, column in enumerate(columns)
         for r, count in enumerate(column) if count
     }
 
-    start = (GRID_COLUMNS - 1, random.randrange(GRID_ROWS))
-    route = [start]
-    state = {"direction": random.choice(DIRECTIONS)}
-    remaining = set(targets)
-    eaten = {}
+    route = [(0, random.randrange(GRID_ROWS))]
+    state = {"direction": (1, 0), "goal": None}
+    rounds = []
 
-    if start in remaining:
-        remaining.remove(start)
-        eaten[start] = 0
+    for round_index in range(ROUNDS):
+        start_step = len(route) - 1
+        remaining = set(targets)
+        eaten = {}
+        state["goal"] = None
 
-    def advance(goal):
-        chosen = choose_direction(route, state["direction"], goal)
+        for _ in range(FREE_STEPS):
+            if not advance(route, state, None, remaining, eaten, start_step):
+                return None
 
-        if chosen is None:
-            return False
+        while remaining and len(route) - start_step < MAX_STEPS:
+            goal = pick_goal(route, state, remaining)
 
-        state["direction"] = chosen
-        route.append(move(route[-1], chosen))
+            if not advance(route, state, goal, remaining, eaten, start_step):
+                return None
 
-        if route[-1] in remaining:
-            remaining.remove(route[-1])
-            eaten[route[-1]] = len(route) - 1
-
-        return True
-
-    for _ in range(FREE_STEPS):
-        if not advance(None):
+        if remaining:
             return None
 
-    while remaining and len(route) < MAX_STEPS:
-        head = route[-1]
-        goal = min(remaining, key = lambda t: abs(t[0] - head[0]) + abs(t[1] - head[1]))
+        path = return_path(route, round_index == ROUNDS - 1)
 
-        if not advance(goal):
+        if path is None:
             return None
 
-    path = path_to(route, start)
+        route += path[1:]
+        rounds.append((start_step, eaten, len(route) - 1))
 
-    if path is None:
-        return None
-
-    route += path[1:]
-
-    return route, eaten
+    return route, rounds
 
 def is_valid_loop(route):
     cycle = route[:-1]
@@ -357,20 +398,26 @@ def cell_position(column, row):
         GRID_Y + row * GRID_CELL_STEP_Y
     )
 
-def eat_animation(eaten_step, duration):
-    start = max(
-        RESET_PAUSE + RESET_FADE,
-        eaten_step * SNAKE_STEP_SECONDS - SNAKE_STEP_SECONDS / 2
-    )
-    times = [0, RESET_PAUSE, RESET_PAUSE + RESET_FADE, start, start + EAT_FADE, duration]
-    key_times = ";".join(f"{min(time, duration) / duration:.4f}" for time in times)
+def eat_animation(events, duration):
+    points = [(0.0, 0)]
+
+    for start, eat, end in events:
+        fade_in_end = min(start + RESET_FADE, end)
+        eat_start = min(max(fade_in_end, eat - SNAKE_STEP_SECONDS / 2), end)
+        eat_end = min(eat_start + EAT_FADE, end)
+        points += [(start, 0), (fade_in_end, 1), (eat_start, 1), (eat_end, 0)]
+
+    points.append((duration, 0))
+
+    key_times = ";".join(f"{time / duration:.5f}" for time, _ in points)
+    values = ";".join(str(value) for _, value in points)
 
     return (
-        f'<animate attributeName="opacity" values="0;0;1;1;0;0" '
+        f'<animate attributeName="opacity" values="{values}" '
         f'keyTimes="{key_times}" dur="{duration:.2f}s" repeatCount="indefinite"/>'
     )
 
-def generate_grid_svg(columns, eaten, duration):
+def generate_grid_svg(columns, rounds, duration):
     maximum = max(
         (count for column in columns for count in column if count is not None),
         default = 0
@@ -387,8 +434,16 @@ def generate_grid_svg(columns, eaten, duration):
             cell = (column_index, row_index)
             animation = ""
 
-            if count > 0 and cell in eaten:
-                animation = eat_animation(eaten[cell], duration)
+            if count > 0:
+                events = [
+                    (
+                        start * SNAKE_STEP_SECONDS,
+                        eaten[cell] * SNAKE_STEP_SECONDS,
+                        end * SNAKE_STEP_SECONDS
+                    )
+                    for start, eaten, end in rounds
+                ]
+                animation = eat_animation(events, duration)
 
             parts.append(
                 f'<rect x="{x:.2f}" y="{y:.2f}" width="{CELL_SIZE}" height="{CELL_SIZE}" '
@@ -432,9 +487,9 @@ def generate_snake_svg(route, duration):
     return "".join(parts)
 
 def generate_svg(columns):
-    route, eaten = generate_route(columns)
+    route, rounds = generate_route(columns)
     duration = (len(route) - 1) * SNAKE_STEP_SECONDS
-    grid_svg = generate_grid_svg(columns, eaten, duration)
+    grid_svg = generate_grid_svg(columns, rounds, duration)
     snake_svg = generate_snake_svg(route, duration)
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}">
@@ -470,7 +525,7 @@ def generate_svg(columns):
     {snake_svg}
 </svg>
 '''
-
+    
 # SCRIPT EXECUTION ---------------------------------------------------------------------------------------------------------------------------------|
 def main():
     print(f"Fetching contribution data for {USERNAME}...")
