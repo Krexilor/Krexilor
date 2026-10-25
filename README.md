@@ -10,11 +10,11 @@
   **Systems programming · Backend development · C++**<br>
   Building efficient software and exploring the fundamentals of C++
   
-  <a href = "https://www.linkedin.com/in/aaravmalik-pro/">
+  <a href = "https://www.linkedin.com/in/aaravmalik-pro/" target = "_blank">
     <img src = "assets/media/badges/linkedin.svg" height = "30" alt = "LinkedIn">
   </a>
   &nbsp;&nbsp;&nbsp;
-  <a href = "mailto:krexilor.dev@gmail.com">
+  <a href = "mailto:krexilor.dev@gmail.com" target = "_blank">
     <img src = "assets/media/badges/email.svg" height = "30" alt = "Email">
   </a>
 
