@@ -1,238 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" fill="none" font-family="Inter, 'Segoe UI', Arial, Helvetica, sans-serif" role="img">
+    <title>Systems Engineering — Infrastructure Architect</title>
+    <desc>Systems programming, C++, backend architecture, runtime memory, services, and data infrastructure.</desc>
 
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1280 320" fill="none">
-  <title>Systems Engineering — Infrastructure Architect</title>
-  <desc>Systems programming, C++, backend architecture, runtime memory, services, and data infrastructure.</desc>
+    <defs>
+        <clipPath id="card">
+            <rect x="1.5" y="1.5" width="1197" height="297" rx="28"/>
+        </clipPath>
+        <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+            <path d="M24 0H0V24" stroke="#7897b8" stroke-opacity=".05" stroke-width=".7"/>
+        </pattern>
+        <linearGradient id="accent" x1="40" y1="0" x2="76" y2="0" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#ffb21a"/>
+            <stop offset="1" stop-color="#ff4a2b"/>
+        </linearGradient>
+    </defs>
 
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="320" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#080F20"/>
-      <stop offset=".55" stop-color="#0B1628"/>
-      <stop offset="1" stop-color="#0B1222"/>
-    </linearGradient>
-    <linearGradient id="processor" x1="429" y1="65" x2="563" y2="270" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#152B48"/>
-      <stop offset="1" stop-color="#0B1628"/>
-    </linearGradient>
-    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-      <path d="M20 0H0V20" stroke="#7897B8" stroke-opacity=".075" stroke-width=".6"/>
-    </pattern>
-    <pattern id="dots" width="100" height="100" patternUnits="userSpaceOnUse">
-      <circle cx="0" cy="0" r="1.4" fill="#1E9BFF" fill-opacity=".3"/>
-    </pattern>
-    <marker id="arrow" markerWidth="6" markerHeight="6" refX="4.5" refY="3" orient="auto">
-      <path d="M0 0L6 3L0 6Z" fill="#1E9BFF"/>
-    </marker>
-    <style>
-      .mono {
-        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-      }
-      .label {
-        fill: #91A8C2;
-        font-size: 9px;
-        letter-spacing: 1.7px;
-      }
-      .minor {
-        fill: #7189AC;
-        font-size: 9px;
-      }
-      .wire {
-        stroke: #3476B9;
-        stroke-width: 1.2;
-      }
-      .panel {
-        fill: #0C1A2B;
-        stroke: #294A72;
-        stroke-width: 1.1;
-      }
-      .pin {
-        stroke: #1E9BFF;
-        stroke-width: 1.2;
-      }
-    </style>
-  </defs>
+    <rect x="1.5" y="1.5" width="1197" height="297" rx="28" fill="#0b1628"/>
+    <rect width="1200" height="300" fill="url(#grid)" clip-path="url(#card)"/>
+    <rect x="1.5" y="1.5" width="1197" height="297" rx="28" stroke="#1f4aa3" stroke-width="3"/>
 
-  <rect width="1280" height="320" fill="url(#bg)"/>
-  <rect width="1280" height="320" fill="url(#grid)"/>
-  <rect width="1280" height="320" fill="url(#dots)" opacity=".55"/>
+    <text x="40" y="46" font-size="11" font-weight="600" letter-spacing="2.4" fill="#8493b6">INFRASTRUCTURE ARCHITECT</text>
+    <rect x="40" y="56" width="36" height="3" rx="1.5" fill="url(#accent)"/>
+    <text x="40" y="94" font-size="26" font-weight="700" fill="#ffffff" textLength="272" lengthAdjust="spacingAndGlyphs">Systems Engineering</text>
+    <text x="40" y="118" font-size="15" fill="#8ea2c6">C++ / Backend / Infrastructure</text>
 
-  <g class="mono">
-    <text x="48" y="52" class="label">SYSTEMS ENGINEERING</text>
-    <rect x="48" y="65" width="30" height="2" rx="1" fill="#1E9BFF"/>
-    <text x="48" y="91" fill="#E0EDF9" font-size="12">C++ / BACKEND / INFRASTRUCTURE</text>
+    <text x="40" y="156" font-size="11" font-weight="600" letter-spacing="2.2" fill="#8493b6">CORE DISCIPLINES</text>
+    <circle cx="46" cy="176" r="4" fill="#1e9bff"/>
+    <text x="60" y="181" font-size="14" fill="#c0d0e4">Memory &amp; resource management</text>
+    <circle cx="46" cy="198" r="4" fill="#8b5cf6"/>
+    <text x="60" y="203" font-size="14" fill="#c0d0e4">Concurrency &amp; runtime systems</text>
+    <circle cx="46" cy="220" r="4" fill="#16e07a"/>
+    <text x="60" y="225" font-size="14" fill="#c0d0e4">APIs &amp; distributed services</text>
 
-    <text x="48" y="130" class="label">CORE DISCIPLINES</text>
+    <line x1="40" y1="240" x2="320" y2="240" stroke="#1a2d52" stroke-width="2"/>
+    <text x="40" y="258" font-size="12" fill="#8493b6">Design with precision.</text>
+    <text x="40" y="274" font-size="12" fill="#8493b6">Build for reliability.</text>
 
-    <circle cx="53" cy="153" r="2.8" fill="#1E9BFF"/>
-    <text x="65" y="156" fill="#C0D0E4" font-size="11">Memory &amp; resource management</text>
+    <line x1="344" y1="40" x2="344" y2="258" stroke="#1a2d52" stroke-width="2"/>
 
-    <circle cx="53" cy="177" r="2.8" fill="#8B5CF6"/>
-    <text x="65" y="180" fill="#C0D0E4" font-size="11">Concurrency &amp; runtime systems</text>
+    <text x="360" y="46" font-size="11" font-weight="600" letter-spacing="1.8" fill="#8493b6"><tspan fill="#ff8a14">01</tspan> / COMPUTE</text>
+    <text x="570" y="46" font-size="11" font-weight="600" letter-spacing="1.8" fill="#8493b6"><tspan fill="#1e9bff">02</tspan> / RUNTIME</text>
+    <text x="780" y="46" font-size="11" font-weight="600" letter-spacing="1.8" fill="#8493b6"><tspan fill="#8b5cf6">03</tspan> / SERVICES</text>
+    <text x="990" y="46" font-size="11" font-weight="600" letter-spacing="1.8" fill="#8493b6"><tspan fill="#16e07a">04</tspan> / DATA</text>
 
-    <circle cx="53" cy="201" r="2.8" fill="#16E07A"/>
-    <text x="65" y="204" fill="#C0D0E4" font-size="11">APIs &amp; distributed services</text>
-
-    <path d="M48 232H340" stroke="#263D5D"/>
-    <text x="48" y="251" class="minor">DESIGN WITH PRECISION.</text>
-    <text x="48" y="266" class="minor">BUILD FOR RELIABILITY.</text>
-    <text x="48" y="295" fill="#536D91" font-size="8" letter-spacing="1.2">ENGINEERING / 001</text>
-  </g>
-
-  <g class="wire" stroke-linejoin="round" stroke-linecap="round">
-    <path d="M350 110H388V95H429"/>
-    <path d="M350 175H375V208H429"/>
-    <path d="M350 239H389V251H429"/>
-    <path d="M563 95H600V116H628"/>
-    <path d="M563 208H595V178H628"/>
-    <path d="M563 251H603V247H628"/>
-    <path d="M769 116H805V90H843"/>
-    <path d="M769 178H843"/>
-    <path d="M769 247H805V261H843"/>
-    <path d="M979 90H1010V116H1042"/>
-    <path d="M979 178H1042"/>
-    <path d="M979 261H1010V247H1042"/>
-  </g>
-
-  <g fill="#1E9BFF">
-    <circle cx="388" cy="110" r="2.2"/>
-    <circle cx="375" cy="175" r="2.2"/>
-    <circle cx="389" cy="239" r="2.2"/>
-    <circle cx="600" cy="116" r="2.2"/>
-    <circle cx="595" cy="178" r="2.2"/>
-    <circle cx="603" cy="247" r="2.2"/>
-    <circle cx="805" cy="90" r="2.2"/>
-    <circle cx="805" cy="261" r="2.2"/>
-  </g>
-
-  <g>
-    <text x="429" y="48" class="mono label">01 / COMPUTE</text>
-    <rect x="429" y="65" width="134" height="205" rx="5" fill="url(#processor)" stroke="#3565A0" stroke-width="1.2"/>
-
-    <g class="pin">
-      <path d="M443 59V65 M455 59V65 M467 59V65 M479 59V65 M491 59V65 M503 59V65 M515 59V65 M527 59V65 M539 59V65 M551 59V65"/>
-      <path d="M443 270V276 M455 270V276 M467 270V276 M479 270V276 M491 270V276 M503 270V276 M515 270V276 M527 270V276 M539 270V276 M551 270V276"/>
+    <g fill="#0e1b30" stroke="#1a2d52" stroke-width="2">
+        <rect x="360" y="58" width="170" height="180" rx="14"/>
+        <rect x="570" y="58" width="170" height="180" rx="14"/>
+        <rect x="780" y="58" width="170" height="180" rx="14"/>
+        <rect x="990" y="58" width="170" height="180" rx="14"/>
     </g>
 
-    <rect x="441" y="79" width="110" height="105" rx="3" fill="#101F35" stroke="#1E9BFF"/>
-    <g stroke="#1E9BFF" stroke-opacity=".7" stroke-width=".8">
-      <path d="M449 96H463V110H475 M543 96H529V110H517"/>
-      <path d="M449 168H465V155H475 M543 168H529V155H517"/>
-      <path d="M491 86V100 M501 86V100 M491 164V177 M501 164V177"/>
+    <g stroke="#ff8a14" stroke-width="2" stroke-linecap="round" stroke-opacity=".9">
+        <path d="M402 70V76 M414 70V76 M426 70V76 M438 70V76 M450 70V76 M462 70V76 M474 70V76 M486 70V76"/>
+        <path d="M402 156V162 M414 156V162 M426 156V162 M438 156V162 M450 156V162 M462 156V162 M474 156V162 M486 156V162"/>
+    </g>
+    <rect x="390" y="76" width="110" height="80" rx="8" fill="#14223a" stroke="#ff8a14" stroke-width="2"/>
+    <rect x="410" y="94" width="70" height="44" rx="5" fill="#1b2236" stroke="#ffb21a" stroke-width="1.5"/>
+    <text x="445" y="123" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">C++</text>
+    <line x1="374" y1="182" x2="516" y2="182" stroke="#1a2d52" stroke-width="2"/>
+    <g font-size="11" letter-spacing=".8" fill="#8ea2c6">
+        <text x="374" y="198">EXECUTION</text>
+        <text x="374" y="212">MEMORY MODEL</text>
+        <text x="374" y="226">RESOURCE LIFETIME</text>
     </g>
 
-    <rect x="475" y="108" width="42" height="45" rx="2" fill="#132B48" stroke="#1E9BFF" stroke-width="1.3"/>
-    <rect x="480" y="113" width="32" height="35" rx="1" fill="#1A3658" stroke="#3A7DC4"/>
-    <text x="496" y="134" text-anchor="middle" class="mono" fill="#FFFFFF" font-size="12" font-weight="700">C++</text>
-    <text x="496" y="197" text-anchor="middle" class="mono" fill="#8CB1D5" font-size="9">PROCESSOR</text>
-
-    <path d="M441 211H551" stroke="#294960"/>
-    <g class="mono" font-size="9" fill="#A0B5D0">
-      <text x="443" y="229">EXECUTION</text>
-      <text x="443" y="244">MEMORY MODEL</text>
-      <text x="443" y="259">RESOURCE LIFETIME</text>
+    <g fill="#14223a" stroke-width="1.5">
+        <rect x="581" y="72" width="148" height="30" rx="7" stroke="#1e9bff"/>
+        <rect x="581" y="108" width="148" height="30" rx="7" stroke="#8b5cf6"/>
+        <rect x="581" y="144" width="148" height="30" rx="7" stroke="#16e07a"/>
     </g>
-  </g>
-
-  <g>
-    <text x="628" y="48" class="mono label">02 / RUNTIME</text>
-    <rect x="628" y="65" width="141" height="205" rx="5" class="panel"/>
-
-    <rect x="642" y="82" width="113" height="32" rx="3" fill="#10263A" stroke="#1E9BFF"/>
-    <rect x="642" y="120" width="113" height="32" rx="3" fill="#10263A" stroke="#8B5CF6"/>
-    <rect x="642" y="158" width="113" height="32" rx="3" fill="#10263A" stroke="#16E07A"/>
-
-    <g stroke-width="1">
-      <path d="M651 89H661 M651 96H661 M651 103H661" stroke="#1E9BFF"/>
-      <path d="M651 127H661 M651 134H661 M651 141H661" stroke="#8B5CF6"/>
-      <path d="M651 165H661 M651 172H661 M651 179H661" stroke="#16E07A"/>
+    <g stroke-width="1.5" stroke-linecap="round">
+        <path d="M594 80H606 M594 87H606 M594 94H606" stroke="#1e9bff"/>
+        <path d="M594 116H606 M594 123H606 M594 130H606" stroke="#8b5cf6"/>
+        <path d="M594 152H606 M594 159H606 M594 166H606" stroke="#16e07a"/>
+    </g>
+    <g font-size="12" font-weight="700" letter-spacing=".6" fill="#d6e2f5">
+        <text x="618" y="91">HEAP</text>
+        <text x="618" y="127">STACK</text>
+        <text x="618" y="163">THREADS</text>
+    </g>
+    <line x1="584" y1="182" x2="726" y2="182" stroke="#1a2d52" stroke-width="2"/>
+    <g font-size="11" letter-spacing=".8" fill="#8ea2c6">
+        <text x="584" y="198">ALLOCATORS</text>
+        <text x="584" y="212">SCHEDULING</text>
+        <text x="584" y="226">SYNCHRONIZATION</text>
     </g>
 
-    <g class="mono" fill="#D0DDF0" font-size="9">
-      <text x="671" y="101">HEAP</text>
-      <text x="671" y="139">STACK</text>
-      <text x="671" y="177">THREADS</text>
+    <g fill="#14223a" stroke-width="1.5">
+        <rect x="791" y="70" width="148" height="46" rx="8" stroke="#1e9bff"/>
+        <rect x="791" y="126" width="148" height="46" rx="8" stroke="#8b5cf6"/>
+        <rect x="791" y="182" width="148" height="46" rx="8" stroke="#16e07a"/>
+    </g>
+    <rect x="802" y="82" width="4" height="22" rx="2" fill="#1e9bff"/>
+    <rect x="802" y="138" width="4" height="22" rx="2" fill="#8b5cf6"/>
+    <rect x="802" y="194" width="4" height="22" rx="2" fill="#16e07a"/>
+    <g font-size="12" font-weight="700" letter-spacing=".5" fill="#d6e2f5">
+        <text x="816" y="91">API GATEWAY</text>
+        <text x="816" y="147">BUSINESS LOGIC</text>
+        <text x="816" y="203">WORKERS</text>
+    </g>
+    <g font-size="10.5" letter-spacing=".4" fill="#8ea2c6">
+        <text x="816" y="106">HTTP / RPC</text>
+        <text x="816" y="162">SERVICE LAYER</text>
+        <text x="816" y="218">ASYNC JOBS</text>
     </g>
 
-    <path d="M642 204H755" stroke="#294960"/>
-    <g class="mono" fill="#A0B5D0" font-size="9">
-      <text x="642" y="224">ALLOCATORS</text>
-      <text x="642" y="240">SCHEDULING</text>
-      <text x="642" y="256">SYNCHRONIZATION</text>
+    <path d="M1000 82V112A22 8 0 0 0 1044 112V82" fill="#14223a" stroke="#16e07a" stroke-width="1.8"/>
+    <path d="M1000 94A22 8 0 0 0 1044 94 M1000 104A22 8 0 0 0 1044 104" stroke="#16e07a" stroke-opacity=".7" stroke-width="1.5"/>
+    <ellipse cx="1022" cy="82" rx="22" ry="8" fill="#1a3350" stroke="#16e07a" stroke-width="1.8"/>
+    <text x="1058" y="94" font-size="13" font-weight="700" letter-spacing=".6" fill="#d6e2f5">PERSIST</text>
+    <text x="1058" y="110" font-size="10.5" letter-spacing=".4" fill="#8ea2c6">SQL / KV</text>
+    <line x1="1004" y1="134" x2="1146" y2="134" stroke="#1a2d52" stroke-width="2"/>
+    <g font-size="12" letter-spacing=".6" fill="#c0d0e4">
+        <text x="1004" y="157">STORAGE</text>
+        <text x="1004" y="176">CACHE</text>
+        <text x="1004" y="195">MESSAGE QUEUES</text>
     </g>
-  </g>
+    <circle cx="1140" cy="153" r="3" fill="#16e07a"/>
+    <circle cx="1140" cy="172" r="3" fill="#8b5cf6"/>
+    <circle cx="1140" cy="191" r="3" fill="#ff8a14"/>
+    <rect x="1004" y="204" width="142" height="24" rx="6" fill="#0d2a26" stroke="#16a66c" stroke-width="1.5"/>
+    <text x="1075" y="220" font-size="9.5" font-weight="600" fill="#62e7a5" text-anchor="middle" textLength="116" lengthAdjust="spacingAndGlyphs">DURABLE / CONSISTENT</text>
 
-  <g>
-    <text x="843" y="48" class="mono label">03 / SERVICES</text>
-    <rect x="843" y="65" width="136" height="205" rx="5" class="panel"/>
-
-    <rect x="856" y="82" width="110" height="43" rx="3" fill="#10263A" stroke="#1E9BFF"/>
-    <rect x="856" y="137" width="110" height="43" rx="3" fill="#10263A" stroke="#8B5CF6"/>
-    <rect x="856" y="192" width="110" height="43" rx="3" fill="#10263A" stroke="#16E07A"/>
-
-    <rect x="866" y="93" width="4" height="21" rx="1" fill="#1E9BFF"/>
-    <rect x="866" y="148" width="4" height="21" rx="1" fill="#8B5CF6"/>
-    <rect x="866" y="203" width="4" height="21" rx="1" fill="#16E07A"/>
-
-    <g class="mono" fill="#D0DDF0" font-size="10">
-      <text x="879" y="101">API GATEWAY</text>
-      <text x="879" y="156">BUSINESS LOGIC</text>
-      <text x="879" y="211">WORKERS</text>
+    <g stroke-width="1.5" stroke-linecap="round" stroke-opacity=".85">
+        <path d="M534 96H566" stroke="#1e9bff"/>
+        <path d="M534 148H566" stroke="#8b5cf6"/>
+        <path d="M534 200H566" stroke="#16e07a"/>
+        <path d="M744 96H776" stroke="#1e9bff"/>
+        <path d="M744 148H776" stroke="#8b5cf6"/>
+        <path d="M744 200H776" stroke="#16e07a"/>
+        <path d="M954 96H986" stroke="#1e9bff"/>
+        <path d="M954 148H986" stroke="#8b5cf6"/>
+        <path d="M954 200H986" stroke="#16e07a"/>
     </g>
-
-    <g class="mono" fill="#819BBB" font-size="8">
-      <text x="879" y="114">HTTP / RPC</text>
-      <text x="879" y="169">SERVICE LAYER</text>
-      <text x="879" y="224">ASYNC JOBS</text>
+    <g fill="#1e9bff">
+        <circle cx="534" cy="96" r="2.5"/>
+        <circle cx="744" cy="96" r="2.5"/>
+        <circle cx="954" cy="96" r="2.5"/>
+        <path d="M561 92.5L567 96L561 99.5Z"/>
+        <path d="M771 92.5L777 96L771 99.5Z"/>
+        <path d="M981 92.5L987 96L981 99.5Z"/>
     </g>
-
-    <path d="M911 125V137 M911 180V192" stroke="#8B5CF6" stroke-opacity=".9" marker-end="url(#arrow)"/>
-  </g>
-
-  <g>
-    <text x="1042" y="48" class="mono label">04 / DATA</text>
-    <rect x="1042" y="65" width="190" height="205" rx="5" class="panel"/>
-
-    <ellipse cx="1091" cy="103" rx="26" ry="10" fill="#17334A" stroke="#1E9BFF" stroke-width="1.2"/>
-    <path d="M1065 103V139C1065 145 1077 150 1091 150C1105 150 1117 145 1117 139V103" fill="#102A3E" stroke="#1E9BFF" stroke-width="1.2"/>
-    <path d="M1065 115C1065 121 1077 126 1091 126C1105 126 1117 121 1117 115 M1065 129C1065 135 1077 140 1091 140C1105 140 1117 135 1117 129" stroke="#1E9BFF" stroke-opacity=".85"/>
-
-    <g class="mono">
-      <text x="1131" y="105" fill="#D4E4F4" font-size="10">PERSIST</text>
-      <text x="1131" y="119" fill="#8CA6C6" font-size="9">SQL / KV</text>
+    <g fill="#8b5cf6">
+        <circle cx="534" cy="148" r="2.5"/>
+        <circle cx="744" cy="148" r="2.5"/>
+        <circle cx="954" cy="148" r="2.5"/>
+        <path d="M561 144.5L567 148L561 151.5Z"/>
+        <path d="M771 144.5L777 148L771 151.5Z"/>
+        <path d="M981 144.5L987 148L981 151.5Z"/>
     </g>
-
-    <path d="M1056 167H1218" stroke="#294960"/>
-
-    <g class="mono" fill="#C0D0E4" font-size="10">
-      <text x="1056" y="188">STORAGE</text>
-      <text x="1056" y="207">CACHE</text>
-      <text x="1056" y="226">MESSAGE QUEUES</text>
+    <g fill="#16e07a">
+        <circle cx="534" cy="200" r="2.5"/>
+        <circle cx="744" cy="200" r="2.5"/>
+        <circle cx="954" cy="200" r="2.5"/>
+        <path d="M561 196.5L567 200L561 203.5Z"/>
+        <path d="M771 196.5L777 200L771 203.5Z"/>
+        <path d="M981 196.5L987 200L981 203.5Z"/>
     </g>
 
-    <circle cx="1209" cy="184" r="2.5" fill="#16E07A"/>
-    <circle cx="1209" cy="203" r="2.5" fill="#8B5CF6"/>
-    <circle cx="1209" cy="222" r="2.5" fill="#FF8A14"/>
-
-    <rect x="1056" y="239" width="162" height="19" rx="2" fill="#102B38" stroke="#16A66C"/>
-    <text x="1137" y="252" text-anchor="middle" class="mono" fill="#62E7A5" font-size="8" letter-spacing="1">DURABILITY / CONSISTENCY</text>
-  </g>
-
-  <g fill="#1E9BFF">
-    <path d="M413 92L419 95L413 98Z"/>
-    <path d="M413 205L419 208L413 211Z"/>
-    <path d="M787 113L793 116L787 119Z"/>
-    <path d="M1008 175L1014 178L1008 181Z"/>
-  </g>
-
-  <path d="M350 291H1232" stroke="#29425C"/>
-
-  <g class="mono">
-    <circle cx="883" cy="303" r="2.8" fill="#1E9BFF"/>
-    <text x="895" y="306" fill="#7189AC" font-size="8" letter-spacing="1">ARCHITECTURE</text>
-
-    <circle cx="1025" cy="303" r="2.8" fill="#8B5CF6"/>
-    <text x="1037" y="306" fill="#7189AC" font-size="8" letter-spacing="1">PERFORMANCE</text>
-
-    <circle cx="1171" cy="303" r="2.8" fill="#16E07A"/>
-    <text x="1183" y="306" fill="#7189AC" font-size="8" letter-spacing="1">RELIABILITY</text>
-  </g>
+    <line x1="360" y1="254" x2="1160" y2="254" stroke="#1a2d52" stroke-width="2"/>
+    <circle cx="364" cy="272" r="3.5" fill="#1e9bff"/>
+    <text x="376" y="276" font-size="10.5" font-weight="600" letter-spacing="1.4" fill="#8493b6">ARCHITECTURE</text>
+    <circle cx="520" cy="272" r="3.5" fill="#8b5cf6"/>
+    <text x="532" y="276" font-size="10.5" font-weight="600" letter-spacing="1.4" fill="#8493b6">PERFORMANCE</text>
+    <circle cx="672" cy="272" r="3.5" fill="#16e07a"/>
+    <text x="684" y="276" font-size="10.5" font-weight="600" letter-spacing="1.4" fill="#8493b6">RELIABILITY</text>
+    <text x="1160" y="276" font-size="10" letter-spacing="1.2" fill="#536d91" text-anchor="end">ENGINEERING / 001</text>
 </svg>
