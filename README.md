@@ -1,7 +1,10 @@
-<p align = "center">
-  <img src = "assets/profile.svg" width = "100%" alt = "Profile SVG">
+<div align = "center">
+  
+  # Krexilor<br>
+  **Systems programming** · **Backend development** · **C++**<br>
+  Building efficient software and exploring the fundamentals of C++<br>
+  
+</div>
 
-  <img src = "assets/development-telemetry.svg" width = "100%" alt = "GitHub stats SVG">
+---
 
-  <img src = "assets/contribution-snake.svg" width = "100%" alt = "Contribution snake SVG">
-</p>
