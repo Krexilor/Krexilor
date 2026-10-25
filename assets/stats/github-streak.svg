@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1646" height="641" viewBox="64 103 1646 641" font-family="Inter, 'Segoe UI', Arial, Helvetica, sans-serif" role="img" aria-label="GitHub streak card">
+    <defs>
+        <linearGradient id="ringGrad" gradientUnits="userSpaceOnUse" x1="170" y1="360" x2="470" y2="590">
+            <stop offset="0" stop-color="#ffb21a"/>
+            <stop offset="0.5" stop-color="#ff8a14"/>
+            <stop offset="1" stop-color="#ff4a2b"/>
+        </linearGradient>
+        <linearGradient id="flameGrad" gradientUnits="userSpaceOnUse" x1="316" y1="350" x2="316" y2="432">
+            <stop offset="0" stop-color="#ff9a1f"/>
+            <stop offset="1" stop-color="#ff5b2e"/>
+        </linearGradient>
+        <filter id="glow" filterUnits="userSpaceOnUse" x="120" y="280" width="392" height="380">
+            <feGaussianBlur stdDeviation="9"/>
+        </filter>
+    </defs>
+    <rect x="65.5" y="104.5" width="1643" height="638" rx="41" fill="#0b1628" stroke="#1f4aa3" stroke-width="3"/>
+    <g transform="translate(129,145) scale(4.875)" fill="#ffffff">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+    </g>
+    <text x="245" y="203" font-size="58" font-weight="700" fill="#ffffff" textLength="389" lengthAdjust="spacingAndGlyphs">GitHub Streak</text>
+    <g transform="translate(1590,139.75) scale(3.5)" fill="none" stroke="#4f7cff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 12c2-2.96 0-7-1-8 0 3.038-1.773 4.741-3 6-1.226 1.26-2 3.24-2 5a6 6 0 1 0 12 0c0-1.532-1.056-3.94-2-5-1.786 3-2.791 3-4 2z"/>
+    </g>
+    <line x1="104" y1="243" x2="1670" y2="243" stroke="#1a2d52" stroke-width="2"/>
+    <circle cx="316" cy="470" r="159" fill="none" stroke="#1b2a42" stroke-width="24"/>
+    <circle cx="316" cy="470" r="159" fill="none" stroke="url(#ringGrad)" stroke-width="24" stroke-linecap="round" opacity="0.55" filter="url(#glow)"/><circle cx="316" cy="470" r="159" fill="none" stroke="url(#ringGrad)" stroke-width="24" stroke-linecap="round"/>
+    <g transform="translate(258.4,335.8) scale(4.8)" fill="none" stroke="url(#flameGrad)" stroke-width="0.95" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 12c2-2.96 0-7-1-8 0 3.038-1.773 4.741-3 6-1.226 1.26-2 3.24-2 5a6 6 0 1 0 12 0c0-1.532-1.056-3.94-2-5-1.786 3-2.791 3-4 2z"/>
+    </g>
+    <text x="316" y="521" font-size="88" font-weight="700" fill="#ffffff" text-anchor="middle">12</text>
+    <text x="231" y="566" font-size="28" font-weight="600" fill="#8493b6" textLength="169" lengthAdjust="spacingAndGlyphs">DAY STREAK</text>
+    <line x1="562" y1="302" x2="562" y2="690" stroke="#1a2d52" stroke-width="2"/>
+    <line x1="967" y1="302" x2="967" y2="435" stroke="#1a2d52" stroke-width="2"/>
+    <line x1="1325" y1="302" x2="1325" y2="435" stroke="#1a2d52" stroke-width="2"/>
+    <line x1="616" y1="484" x2="1658" y2="484" stroke="#1a2d52" stroke-width="2"/>
+    <line x1="1116" y1="534" x2="1116" y2="690" stroke="#1a2d52" stroke-width="2"/>
+    <g fill="none" stroke="#1e9bff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="636" cy="318" r="7"/>
+        <circle cx="668" cy="318" r="7"/>
+        <circle cx="637" cy="353" r="7"/>
+        <path d="M636 325 V346"/>
+        <path d="M668 325 V330 Q668 340 656 340 H644 Q636 340 636 336"/>
+    </g>
+    <text x="715" y="345" font-size="29" fill="#8ea2c6" textLength="183" lengthAdjust="spacingAndGlyphs">Total commits</text>
+    <text x="714" y="428" font-size="58" font-weight="700" fill="#ffffff">95</text>
+    <g fill="none" stroke="#8b5cf6" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="1025" cy="321" r="6.5"/>
+        <circle cx="1025" cy="350" r="6.5"/>
+        <circle cx="1057" cy="350" r="6.5"/>
+        <path d="M1025 328 V343"/>
+        <path d="M1057 343 V330 Q1057 322 1049 322 H1043"/>
+        <path d="M1042 322 H1058 M1050 314 V330" stroke-width="4"/>
+    </g>
+    <text x="1103" y="345" font-size="29" fill="#8ea2c6" textLength="170" lengthAdjust="spacingAndGlyphs">Pull requests</text>
+    <text x="1103" y="428" font-size="58" font-weight="700" fill="#ffffff">0</text>
+    <circle cx="1397" cy="336" r="26" fill="none" stroke="#16e07a" stroke-width="4.5"/>
+    <path d="M1397 322 V338" stroke="#16e07a" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="1397" cy="350" r="3" fill="#16e07a"/>
+    <text x="1460" y="345" font-size="29" fill="#8ea2c6" textLength="188" lengthAdjust="spacingAndGlyphs">Issues opened</text>
+    <text x="1460" y="428" font-size="58" font-weight="700" fill="#ffffff">0</text>
+    <g fill="none" stroke="#f5a623" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="627" y="541" width="53" height="52" rx="8"/>
+        <path d="M627 558 H680"/>
+        <path d="M642 535 V547 M665 535 V547"/>
+        <circle cx="642" cy="577" r="2.5"/>
+    </g>
+    <text x="715" y="577" font-size="29" fill="#8ea2c6" textLength="198" lengthAdjust="spacingAndGlyphs">Longest streak</text>
+    <text x="715" y="652" font-size="58" font-weight="700" fill="#fbbf24">12 days</text>
+    <g fill="none" stroke="#5b6cf0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="1182" y="541" width="53" height="52" rx="8"/>
+        <path d="M1182 558 H1235"/>
+        <path d="M1197 535 V547 M1220 535 V547"/>
+        <circle cx="1197" cy="577" r="2.5"/>
+    </g>
+    <text x="1268" y="577" font-size="29" fill="#8ea2c6" textLength="190" lengthAdjust="spacingAndGlyphs">Tracking since</text>
+    <text x="1268" y="652" font-size="58" font-weight="700" fill="#ffffff">May 2025</text>
+</svg>
