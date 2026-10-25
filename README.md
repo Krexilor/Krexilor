@@ -1,5 +1,5 @@
 <div align = "center">
-  <img src = "assets/media/github_banner.png" width = "1200" height = "300" alt = "Github banner">
+  <img src = "assets/media/banner.svg" width = "1200" height = "300" alt = "Github banner">
 </div>
 
 ---
