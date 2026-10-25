@@ -9,7 +9,7 @@
 <text x="245" y="203" font-size="58" font-weight="700" fill="#ffffff" textLength="592" lengthAdjust="spacingAndGlyphs">Contribution Calendar</text>
 <g transform="translate(1603.2,151.2) scale(2.4)" fill="none" stroke="#4f7cff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8l4 -16l3 8h4"/></g>
 <line x1="104" y1="243" x2="1670" y2="243" stroke="#1a2d52" stroke-width="2"/>
-<text x="148" y="312" font-size="30" fill="#8ea2c6"><tspan font-size="36" font-weight="700" fill="#ffffff">108</tspan> contributions in the last year</text>
+<text x="148" y="312" font-size="30" fill="#8ea2c6"><tspan font-size="36" font-weight="700" fill="#ffffff">113</tspan> contributions in the last year</text>
 <text x="176" y="382" font-size="24" fill="#8493b6">Nov</text><text x="316" y="382" font-size="24" fill="#8493b6">Dec</text><text x="428" y="382" font-size="24" fill="#8493b6">Jan</text><text x="540" y="382" font-size="24" fill="#8493b6">Feb</text><text x="652" y="382" font-size="24" fill="#8493b6">Mar</text><text x="792" y="382" font-size="24" fill="#8493b6">Apr</text><text x="904" y="382" font-size="24" fill="#8493b6">May</text><text x="1044" y="382" font-size="24" fill="#8493b6">Jun</text><text x="1156" y="382" font-size="24" fill="#8493b6">Jul</text><text x="1268" y="382" font-size="24" fill="#8493b6">Aug</text><text x="1408" y="382" font-size="24" fill="#8493b6">Sep</text><text x="1520" y="382" font-size="24" fill="#8493b6">Oct</text>
 <rect x="148" y="400" width="1478" height="190" fill="url(#grid)"/>
 <rect x="1603" y="427" width="24" height="24" rx="6" fill="#0b1628"/><rect x="1603" y="455" width="24" height="24" rx="6" fill="#0b1628"/><rect x="1603" y="483" width="24" height="24" rx="6" fill="#0b1628"/><rect x="1603" y="511" width="24" height="24" rx="6" fill="#0b1628"/><rect x="1603" y="539" width="24" height="24" rx="6" fill="#0b1628"/><rect x="1603" y="567" width="24" height="24" rx="6" fill="#0b1628"/>
@@ -17,12 +17,12 @@
 <use href="#c" x="1268" y="568" class="l1 k1"/>
 <use href="#c" x="1548" y="484" class="l1 k2"/>
 <use href="#c" x="1548" y="512" class="l1 k3"/>
-<use href="#c" x="1548" y="540" class="l3 k4"/>
+<use href="#c" x="1548" y="540" class="l2 k4"/>
 <use href="#c" x="1548" y="568" class="l2 k5"/>
 <use href="#c" x="1576" y="400" class="l2 k6"/>
-<use href="#c" x="1576" y="428" class="l3 k7"/>
+<use href="#c" x="1576" y="428" class="l2 k7"/>
 <use href="#c" x="1576" y="456" class="l2 k8"/>
-<use href="#c" x="1576" y="484" class="l2 k9"/>
+<use href="#c" x="1576" y="484" class="l1 k9"/>
 <use href="#c" x="1576" y="512" class="l1 k10"/>
 <use href="#c" x="1576" y="540" class="l1 k11"/>
 <use href="#c" x="1576" y="568" class="l1 k12"/>
