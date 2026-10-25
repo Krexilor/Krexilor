@@ -13,30 +13,30 @@
         <path d="M7 8l-4 4l4 4M17 8l4 4l-4 4M14 4l-4 16"/>
     </g>
     <line x1="104" y1="243" x2="1670" y2="243" stroke="#1a2d52" stroke-width="2"/>
-    <g fill="none" stroke-width="24" transform="rotate(-90 316 470)"><circle cx="316" cy="470" r="159" stroke="#ff8a14" stroke-dasharray="547.75 999.03" stroke-dashoffset="-2.50"/><circle cx="316" cy="470" r="159" stroke="#1e9bff" stroke-dasharray="320.26 999.03" stroke-dashoffset="-555.25"/><circle cx="316" cy="470" r="159" stroke="#8b5cf6" stroke-dasharray="59.46 999.03" stroke-dashoffset="-880.51"/><circle cx="316" cy="470" r="159" stroke="#16e07a" stroke-dasharray="47.99 999.03" stroke-dashoffset="-944.97"/><circle cx="316" cy="470" r="159" stroke="#fbbf24" stroke-dasharray="1.00 999.03" stroke-dashoffset="-997.96"/></g>
+    <g fill="none" stroke-width="24" transform="rotate(-90 316 470)"><circle cx="316" cy="470" r="159" stroke="#ff8a14" stroke-dasharray="527.09 999.03" stroke-dashoffset="-2.50"/><circle cx="316" cy="470" r="159" stroke="#1e9bff" stroke-dasharray="308.11 999.03" stroke-dashoffset="-534.59"/><circle cx="316" cy="470" r="159" stroke="#8b5cf6" stroke-dasharray="83.34 999.03" stroke-dashoffset="-847.70"/><circle cx="316" cy="470" r="159" stroke="#16e07a" stroke-dasharray="57.06 999.03" stroke-dashoffset="-936.04"/><circle cx="316" cy="470" r="159" stroke="#fbbf24" stroke-dasharray="1.00 999.03" stroke-dashoffset="-998.09"/></g>
     <g transform="translate(274.6,350) scale(3.45)" fill="none" stroke="#ff8a14" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
         <path d="M7 8l-4 4l4 4M17 8l4 4l-4 4M14 4l-4 16"/>
     </g>
     <text x="316" y="516" font-size="38" font-weight="700" fill="#ffffff" text-anchor="middle">JavaScript</text>
     <text x="214" y="566" font-size="28" font-weight="600" fill="#8493b6" textLength="203" lengthAdjust="spacingAndGlyphs">TOP LANGUAGE</text>
     <line x1="562" y1="302" x2="562" y2="690" stroke="#1a2d52" stroke-width="2"/>
-    <g clip-path="url(#barClip)"><rect x="616.0" y="298" width="565.5" height="24" fill="#ff8a14"/><rect x="1186.5" y="298" width="332.7" height="24" fill="#1e9bff"/><rect x="1524.2" y="298" width="65.9" height="24" fill="#8b5cf6"/><rect x="1595.1" y="298" width="54.2" height="24" fill="#16e07a"/><rect x="1654.4" y="298" width="3.6" height="24" fill="#fbbf24"/></g>
+    <g clip-path="url(#barClip)"><rect x="616.0" y="298" width="544.3" height="24" fill="#ff8a14"/><rect x="1165.3" y="298" width="320.3" height="24" fill="#1e9bff"/><rect x="1490.6" y="298" width="90.4" height="24" fill="#8b5cf6"/><rect x="1586.0" y="298" width="63.5" height="24" fill="#16e07a"/><rect x="1654.5" y="298" width="3.5" height="24" fill="#fbbf24"/></g>
     <line x1="940" y1="360" x2="940" y2="690" stroke="#1a2d52" stroke-width="2"/>
     <line x1="1288" y1="360" x2="1288" y2="690" stroke="#1a2d52" stroke-width="2"/>
     <line x1="616" y1="512" x2="1658" y2="512" stroke="#1a2d52" stroke-width="2"/>
     <circle cx="626" cy="386" r="9" fill="#ff8a14"/>
     <text x="650" y="396" font-size="29" fill="#8ea2c6">JavaScript</text>
-    <text x="650" y="470" font-size="58" font-weight="700" fill="#ffffff">55.3%</text>
+    <text x="650" y="470" font-size="58" font-weight="700" fill="#ffffff">53.3%</text>
     <circle cx="974" cy="386" r="9" fill="#1e9bff"/>
     <text x="998" y="396" font-size="29" fill="#8ea2c6">CSS</text>
-    <text x="998" y="470" font-size="58" font-weight="700" fill="#ffffff">32.6%</text>
+    <text x="998" y="470" font-size="58" font-weight="700" fill="#ffffff">31.3%</text>
     <circle cx="1322" cy="386" r="9" fill="#8b5cf6"/>
-    <text x="1346" y="396" font-size="29" fill="#8ea2c6">C++</text>
-    <text x="1346" y="470" font-size="58" font-weight="700" fill="#ffffff">6.5%</text>
+    <text x="1346" y="396" font-size="29" fill="#8ea2c6">Python</text>
+    <text x="1346" y="470" font-size="58" font-weight="700" fill="#ffffff">8.8%</text>
     <circle cx="626" cy="568" r="9" fill="#16e07a"/>
-    <text x="650" y="578" font-size="29" fill="#8ea2c6">Python</text>
-    <text x="650" y="652" font-size="58" font-weight="700" fill="#ffffff">5.3%</text>
+    <text x="650" y="578" font-size="29" fill="#8ea2c6">C++</text>
+    <text x="650" y="652" font-size="58" font-weight="700" fill="#ffffff">6.2%</text>
     <circle cx="974" cy="568" r="9" fill="#fbbf24"/>
     <text x="998" y="578" font-size="29" fill="#8ea2c6">HTML</text>
-    <text x="998" y="652" font-size="58" font-weight="700" fill="#ffffff">0.4%</text>
+    <text x="998" y="652" font-size="58" font-weight="700" fill="#ffffff">0.3%</text>
 </svg>
