@@ -11,3 +11,14 @@
   Building efficient software and exploring the fundamentals of C++<br>
   
 </div>
+
+---
+
+# GitHub Stats
+
+<div align = "center">
+
+  <img src = "assets/stats/github-streak.svg" width = "40%" alt = "Github streak card">
+
+</div>
+
