@@ -17,6 +17,10 @@
   <a href = "mailto:krexilor.dev@gmail.com" target = "_blank">
     <img src = "assets/media/badges/email.svg" height = "30" alt = "Email">
   </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href = "https://leetcode.com/u/Krexilor/" target = "_blank">
+    <img src = "assets/media/badges/leetcode.svg" height = "30" alt = "Leetcode">
+  </a>
 
   <!-- GITHUB STATISTICS SECTION -->
   <img src = "assets/media/divider.svg" width = "100%" alt = "Divider">
