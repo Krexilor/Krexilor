@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="24" viewBox="0 0 1200 24" fill="none" role="img" aria-label="Divider">
+    <title>Divider</title>
+
+    <defs>
+        <linearGradient id="fade" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#000000"/>
+            <stop offset=".14" stop-color="#ffffff"/>
+            <stop offset=".86" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#000000"/>
+        </linearGradient>
+        <mask id="edges" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="24">
+            <rect width="1200" height="24" fill="url(#fade)"/>
+        </mask>
+        <linearGradient id="track" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#1e9bff"/>
+            <stop offset=".5" stop-color="#8b5cf6"/>
+            <stop offset="1" stop-color="#16e07a"/>
+        </linearGradient>
+        <linearGradient id="pulse">
+            <stop offset="0" stop-color="#1e9bff" stop-opacity="0"/>
+            <stop offset=".35" stop-color="#1e9bff"/>
+            <stop offset=".7" stop-color="#8b5cf6"/>
+            <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="glow" x="-5%" y="-300%" width="110%" height="700%">
+            <feGaussianBlur stdDeviation="5"/>
+        </filter>
+        <style>
+            .pulse {
+                animation: sweep 6s cubic-bezier(.45, .05, .55, .95) infinite;
+            }
+            .ring {
+                transform-box: fill-box;
+                transform-origin: center;
+                animation: ripple 3s ease-out infinite;
+            }
+            @keyframes sweep {
+                from { transform: translateX(-280px); }
+                to { transform: translateX(1200px); }
+            }
+            @keyframes ripple {
+                from { transform: scale(1); opacity: .7; }
+                to { transform: scale(3.2); opacity: 0; }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                .pulse, .ring { animation: none; }
+            }
+        </style>
+    </defs>
+
+    <g mask="url(#edges)">
+        <rect x="0" y="10" width="1200" height="4" rx="2" fill="url(#track)" fill-opacity=".5"/>
+        <rect class="pulse" x="0" y="10" width="280" height="4" rx="2" fill="url(#pulse)" filter="url(#glow)" opacity=".8"/>
+        <rect class="pulse" x="0" y="10" width="280" height="4" rx="2" fill="url(#pulse)"/>
+    </g>
+
+    <circle class="ring" cx="600" cy="12" r="3.5" stroke="#ff8a14" stroke-width="1.2"/>
+    <circle cx="600" cy="12" r="4" fill="#0b1628" stroke="#ff8a14" stroke-width="1.6"/>
+    <circle cx="600" cy="12" r="1.8" fill="#ffb21a"/>
+</svg>
