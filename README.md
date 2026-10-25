@@ -14,7 +14,15 @@
 
 ---
 
-# GitHub Statistics
+## Technical Skills
+
+---
+
+## Featured Projects
+
+---
+
+## GitHub Statistics
 
 <div align = "center">
 
@@ -25,8 +33,12 @@
 
 ---
 
-# Snake Contribution
+## GitHub Contributions
 
 <div align = "center">
 
 </div>
+
+---
+
+## Connect
