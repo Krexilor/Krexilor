@@ -7,7 +7,7 @@
 <div align = "center">
   
   # Krexilor
-  **Systems programming** · **Backend development** · **C++**<br>
+  **Systems programming · Backend development · C++**<br>
   Building efficient software and exploring the fundamentals of C++<br>
   
 </div>
