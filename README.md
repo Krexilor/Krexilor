@@ -18,7 +18,8 @@
 
 <div align = "center">
 
-  <img src = "assets/stats/github-streak.svg" width = "40%" alt = "Github streak card">
+  <img src = "assets/stats/github-streak.svg" width = "48%" alt = "Github streak card">
+  <img src = "assets/stats/github-languages.svg" width = "48%" alt = "Most used languages card">
 
 </div>
 
