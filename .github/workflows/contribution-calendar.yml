@@ -2,7 +2,7 @@ name: Generate Contribution Calendar
 
 on:
   schedule:
-    - cron: "30 18 * * *"
+    - cron: "37 18 * * *"
 
   workflow_dispatch:
 
