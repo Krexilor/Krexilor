@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="44" viewBox="0 0 150 44" fill="none" role="img" aria-label="Email">
+    <title>Email</title>
+    <defs>
+        <linearGradient id="accentEmail" x1="106" y1="0" x2="150" y2="44" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#ffb21a"/>
+            <stop offset="1" stop-color="#ff4a2b"/>
+        </linearGradient>
+        <clipPath id="clipEmail">
+            <rect x="1" y="1" width="148" height="42" rx="12"/>
+        </clipPath>
+    </defs>
+    <rect x="1" y="1" width="148" height="42" rx="12" fill="#0b1628"/>
+    <g clip-path="url(#clipEmail)">
+        <rect x="106" y="0" width="44" height="44" fill="url(#accentEmail)"/>
+    </g>
+    <rect x="1" y="1" width="148" height="42" rx="12" stroke="#1f4aa3" stroke-width="2"/>
+    <circle cx="20" cy="22" r="3.5" fill="#ff8a14"/>
+    <text x="32" y="27" font-family="Inter, 'Segoe UI', Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing=".4" fill="#ffffff">Email</text>
+    <path d="M122 28L134 16 M126 16H134V24" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
