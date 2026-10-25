@@ -14,3 +14,18 @@
 
 ---
 
+## 🐍 Snake Contribution
+
+<div align = "center">
+  <picture>
+    <source
+      media = "(prefers-color-scheme: dark)"
+      srcset = "./assets/snake/github-snake-dark.svg"
+    >
+    <source
+      media = "(prefers-color-scheme: light)"
+      srcset = "./assets/snake/github-snake.svg"
+    >
+    <img src = "./assets/snake/github-snake.svg" alt = "Github contribution snake" width = "100%">
+  </picture>
+</div>
