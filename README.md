@@ -45,6 +45,8 @@
 <div align = "center">
 
   ## Contribution Calendar
+  
+  <img src = "assets/stats/github-contribution-calendar.svg" width = "100%" alt = "Contribution calendar car">
 
 </div>
 

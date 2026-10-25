@@ -1,0 +1,44 @@
+name: Generate Contribution Calendar
+
+on:
+  schedule:
+    - cron: "30 18 * * *"
+
+  workflow_dispatch:
+
+  push:
+    paths:
+      - "scripts/generate_contribution_calendar.py"
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate contribution calendar
+        env:
+          GH_TOKEN: ${{ secrets.STATS_TOKEN || github.token }}
+          GITHUB_USER: ${{ github.repository_owner }}
+          OUTPUT_PATH: assets/stats/github-contribution-calendar.svg
+        run: python scripts/generate_contribution_calendar.py
+
+      - name: Commit generated SVG
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update contribution calendar"
+          commit_user_name: github-actions[bot]
+          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          file_pattern: assets/stats/github-contribution-calendar.svg
