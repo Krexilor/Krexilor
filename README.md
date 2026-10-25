@@ -14,7 +14,7 @@
 
 ---
 
-# GitHub Stats
+# GitHub Statistics
 
 <div align = "center">
 
@@ -23,3 +23,10 @@
 
 </div>
 
+---
+
+# Snake Contribution
+
+<div align = "center">
+
+</div>
