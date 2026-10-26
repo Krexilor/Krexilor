@@ -22,6 +22,35 @@
     <img src = "assets/media/badges/leetcode.svg" height = "30" alt = "Leetcode">
   </a>
 
+  <!-- TECH STACK SECTION -->
+  <img src = "assets/media/divider.svg" width = "100%" alt = "Divider">
+
+  # Tech Stack
+
+  <table = "100%">
+    <thead>
+      <tr>
+        <th width = "33.33%">Languages</th>
+        <th width = "33.33%">Development Tools</th>
+        <th width = "33.33%">Platforms &amp; Systems</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td align = "center" valign = "top">
+          <img src = "assets/media/icons/cpp.svg" width = "64" alt = "C++">
+        </td>
+        <td align = "center" valign = "top">
+          <img src = "assets/media/icons/git.svg" width = "64" alt = "Git">
+          <img src = "assets/media/icons/github.svg" width = "64" alt = "GitHub">
+        </td>
+        <td align = "center" valign = "top">
+          <img src = "assets/media/icons/ubuntu.svg" width = "64" alt = "Ubuntu">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
   <!-- GITHUB STATISTICS SECTION -->
   <img src = "assets/media/divider.svg" width = "100%" alt = "Divider">
 
