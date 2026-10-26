@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140" fill="none" font-family="Inter, 'Segoe UI', Arial, Helvetica, sans-serif" role="img" aria-label="Git">
+    <title>Git</title>
+    <defs>
+        <radialGradient id="glowGit" cx="70" cy="58" r="50" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#8b5cf6" stop-opacity=".26"/>
+            <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="fillGit" x1="40" y1="26" x2="100" y2="90" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#8b5cf6"/>
+            <stop offset="1" stop-color="#5b6cf0"/>
+        </linearGradient>
+    </defs>
+    <rect x="1.5" y="1.5" width="137" height="137" rx="26" fill="#0b1628" stroke="#1f4aa3" stroke-width="3"/>
+    <circle cx="70" cy="58" r="50" fill="url(#glowGit)"/>
+    <rect x="47" y="35" width="46" height="46" rx="8" transform="rotate(45 70 58)" fill="url(#fillGit)"/>
+    <path d="M62 72V44M62 63C62 57 67 56 77 56" stroke="#ffffff" stroke-width="3.6" stroke-linecap="round"/>
+    <circle cx="62" cy="44" r="5.2" fill="#ffffff"/>
+    <circle cx="62" cy="72" r="5.2" fill="#ffffff"/>
+    <circle cx="79" cy="56" r="5.2" fill="#ffffff"/>
+    <text x="70" y="118" font-size="15" font-weight="700" letter-spacing=".6" fill="#d6e2f5" text-anchor="middle">Git</text>
+</svg>
