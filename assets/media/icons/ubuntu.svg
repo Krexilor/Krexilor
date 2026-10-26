@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140" fill="none" font-family="Inter, 'Segoe UI', Arial, Helvetica, sans-serif" role="img" aria-label="Ubuntu">
+    <title>Ubuntu</title>
+    <defs>
+        <radialGradient id="glowUbuntu" cx="70" cy="58" r="50" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#ff8a14" stop-opacity=".26"/>
+            <stop offset="1" stop-color="#ff8a14" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="fillUbuntu" x1="40" y1="26" x2="100" y2="90" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#ffb21a"/>
+            <stop offset=".55" stop-color="#ff8a14"/>
+            <stop offset="1" stop-color="#ff4a2b"/>
+        </linearGradient>
+    </defs>
+    <rect x="1.5" y="1.5" width="137" height="137" rx="26" fill="#0b1628" stroke="#1f4aa3" stroke-width="3"/>
+    <circle cx="70" cy="58" r="50" fill="url(#glowUbuntu)"/>
+    <circle cx="70" cy="58" r="34" fill="url(#fillUbuntu)"/>
+    <circle cx="70" cy="58" r="12" stroke="#ffffff" stroke-width="4.5"/>
+    <path d="M58 58H53M76 47.6L78.5 43.3M76 68.4L78.5 72.7" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="48" cy="58" r="5.5" fill="#ffffff"/>
+    <circle cx="81" cy="38.9" r="5.5" fill="#ffffff"/>
+    <circle cx="81" cy="77.1" r="5.5" fill="#ffffff"/>
+    <text x="70" y="118" font-size="15" font-weight="700" letter-spacing=".6" fill="#d6e2f5" text-anchor="middle">Ubuntu</text>
+</svg>
