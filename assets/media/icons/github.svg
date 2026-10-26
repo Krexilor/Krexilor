@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140" fill="none" font-family="Inter, 'Segoe UI', Arial, Helvetica, sans-serif" role="img" aria-label="GitHub">
+    <title>GitHub</title>
+    <defs>
+        <radialGradient id="glowGithub" cx="70" cy="58" r="50" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#4f7cff" stop-opacity=".26"/>
+            <stop offset="1" stop-color="#4f7cff" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="ringGithub" x1="34" y1="22" x2="106" y2="94" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#38b6ff"/>
+            <stop offset="1" stop-color="#8b5cf6"/>
+        </linearGradient>
+    </defs>
+    <rect x="1.5" y="1.5" width="137" height="137" rx="26" fill="#0b1628" stroke="#1f4aa3" stroke-width="3"/>
+    <circle cx="70" cy="58" r="50" fill="url(#glowGithub)"/>
+    <circle cx="70" cy="58" r="36" fill="#101f35" stroke="url(#ringGithub)" stroke-width="3"/>
+    <g transform="translate(43,31) scale(3.375)" fill="#ffffff"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></g>
+    <text x="70" y="118" font-size="15" font-weight="700" letter-spacing=".6" fill="#d6e2f5" text-anchor="middle">GitHub</text>
+</svg>
