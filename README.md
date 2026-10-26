@@ -38,14 +38,14 @@
     <tbody>
       <tr>
         <td align = "center" valign = "top">
-          <img src = "assets/media/icons/cpp.svg" width = "64" alt = "C++">
+          <img src = "assets/media/icons/cpp.svg" width = "70" alt = "C++">
         </td>
         <td align = "center" valign = "top">
-          <img src = "assets/media/icons/git.svg" width = "64" alt = "Git">
-          <img src = "assets/media/icons/github.svg" width = "64" alt = "GitHub">
+          <img src = "assets/media/icons/git.svg" width = "70" alt = "Git">
+          <img src = "assets/media/icons/github.svg" width = "70" alt = "GitHub">
         </td>
         <td align = "center" valign = "top">
-          <img src = "assets/media/icons/ubuntu.svg" width = "64" alt = "Ubuntu">
+          <img src = "assets/media/icons/ubuntu.svg" width = "70" alt = "Ubuntu">
         </td>
       </tr>
     </tbody>
