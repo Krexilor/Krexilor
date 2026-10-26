@@ -27,12 +27,12 @@
 
   # Tech Stack
 
-  <table = "100%">
+  <table align = "center" width = "100%">
     <thead>
       <tr>
-        <th width = "33.33%">Languages</th>
-        <th width = "33.33%">Development Tools</th>
-        <th width = "33.33%">Platforms &amp; Systems</th>
+        <th>Languages</th>
+        <th>Development Tools</th>
+        <th>Platforms &amp; Systems</th>
       </tr>
     </thead>
     <tbody>
