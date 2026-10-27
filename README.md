@@ -51,6 +51,16 @@
     </tbody>
   </table>
 
+  <!-- FEATURED PROJECTS SECTION -->
+  <img src = "assets/media/divider.svg" width = "100%" alt = "Divider">
+
+  # Featured Projects
+
+  | S. No. | Project Name | Description | Tech Stack | Links |
+  |:---:|:---:|:---:|:---:|:---:|
+  | 1. | [Portfolio](https://github.com/Krexilor/Portfolio) | A modern, responsive portfolio website built with react | `React` `JavaScript` `Vite` | [Live Demo](https://krexilor.pages.dev) |
+  | 2. | [HueForge](https://github.com/Krexilor/HueForge) | An interactive dev tool for building complete, functional color systems, not just isolated palettes | `React` `JavaScript` `Vite` | [Live Demo](https://hueforge.pages.dev) |
+
   <!-- GITHUB STATISTICS SECTION -->
   <img src = "assets/media/divider.svg" width = "100%" alt = "Divider">
 
