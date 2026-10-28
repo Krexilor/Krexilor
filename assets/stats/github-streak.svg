@@ -27,7 +27,7 @@
     <g transform="translate(258.4,335.8) scale(4.8)" fill="none" stroke="url(#flameGrad)" stroke-width="0.95" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 12c2-2.96 0-7-1-8 0 3.038-1.773 4.741-3 6-1.226 1.26-2 3.24-2 5a6 6 0 1 0 12 0c0-1.532-1.056-3.94-2-5-1.786 3-2.791 3-4 2z"/>
     </g>
-    <text x="316" y="521" font-size="88" font-weight="700" fill="#ffffff" text-anchor="middle">14</text>
+    <text x="316" y="521" font-size="88" font-weight="700" fill="#ffffff" text-anchor="middle">15</text>
     <text x="231" y="566" font-size="28" font-weight="600" fill="#8493b6" textLength="169" lengthAdjust="spacingAndGlyphs">DAY STREAK</text>
     <line x1="562" y1="302" x2="562" y2="690" stroke="#1a2d52" stroke-width="2"/>
     <line x1="967" y1="302" x2="967" y2="435" stroke="#1a2d52" stroke-width="2"/>
@@ -42,7 +42,7 @@
         <path d="M668 325 V330 Q668 340 656 340 H644 Q636 340 636 336"/>
     </g>
     <text x="715" y="345" font-size="29" fill="#8ea2c6" textLength="183" lengthAdjust="spacingAndGlyphs">Total commits</text>
-    <text x="714" y="428" font-size="58" font-weight="700" fill="#ffffff">145</text>
+    <text x="714" y="428" font-size="58" font-weight="700" fill="#ffffff">148</text>
     <g fill="none" stroke="#8b5cf6" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="1025" cy="321" r="6.5"/>
         <circle cx="1025" cy="350" r="6.5"/>
@@ -65,7 +65,7 @@
         <circle cx="642" cy="577" r="2.5"/>
     </g>
     <text x="715" y="577" font-size="29" fill="#8ea2c6" textLength="198" lengthAdjust="spacingAndGlyphs">Longest streak</text>
-    <text x="715" y="652" font-size="58" font-weight="700" fill="#fbbf24">14 days</text>
+    <text x="715" y="652" font-size="58" font-weight="700" fill="#fbbf24">15 days</text>
     <g fill="none" stroke="#5b6cf0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
         <rect x="1182" y="541" width="53" height="52" rx="8"/>
         <path d="M1182 558 H1235"/>
