@@ -13,32 +13,32 @@
         <path d="M7 8l-4 4l4 4M17 8l4 4l-4 4M14 4l-4 16"/>
     </g>
     <line x1="104" y1="243" x2="1670" y2="243" stroke="#1a2d52" stroke-width="2"/>
-    <g fill="none" stroke-width="24" transform="rotate(-90 316 470)"><circle cx="316" cy="470" r="159" stroke="#ff8a14" stroke-dasharray="519.13 999.03" stroke-dashoffset="-2.50"/><circle cx="316" cy="470" r="159" stroke="#1e9bff" stroke-dasharray="300.41 999.03" stroke-dashoffset="-526.63"/><circle cx="316" cy="470" r="159" stroke="#8b5cf6" stroke-dasharray="78.27 999.03" stroke-dashoffset="-832.04"/><circle cx="316" cy="470" r="159" stroke="#16e07a" stroke-dasharray="72.89 999.03" stroke-dashoffset="-915.31"/><circle cx="316" cy="470" r="159" stroke="#fbbf24" stroke-dasharray="1.00 999.03" stroke-dashoffset="-993.20"/><circle cx="316" cy="470" r="159" stroke="#6f7fa6" stroke-dasharray="1.00 999.03" stroke-dashoffset="-997.80"/></g>
+    <g fill="none" stroke-width="24" transform="rotate(-90 316 470)"><circle cx="316" cy="470" r="159" stroke="#ff8a14" stroke-dasharray="496.15 999.03" stroke-dashoffset="-2.50"/><circle cx="316" cy="470" r="159" stroke="#1e9bff" stroke-dasharray="287.02 999.03" stroke-dashoffset="-503.65"/><circle cx="316" cy="470" r="159" stroke="#8b5cf6" stroke-dasharray="110.45 999.03" stroke-dashoffset="-795.68"/><circle cx="316" cy="470" r="159" stroke="#16e07a" stroke-dasharray="74.62 999.03" stroke-dashoffset="-911.12"/><circle cx="316" cy="470" r="159" stroke="#fbbf24" stroke-dasharray="2.22 999.03" stroke-dashoffset="-990.75"/><circle cx="316" cy="470" r="159" stroke="#6f7fa6" stroke-dasharray="1.00 999.03" stroke-dashoffset="-997.96"/></g>
     <g transform="translate(274.6,350) scale(3.45)" fill="none" stroke="#ff8a14" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
         <path d="M7 8l-4 4l4 4M17 8l4 4l-4 4M14 4l-4 16"/>
     </g>
     <text x="316" y="516" font-size="38" font-weight="700" fill="#ffffff" text-anchor="middle">JavaScript</text>
     <text x="214" y="566" font-size="28" font-weight="600" fill="#8493b6" textLength="203" lengthAdjust="spacingAndGlyphs">TOP LANGUAGE</text>
     <line x1="562" y1="302" x2="562" y2="690" stroke="#1a2d52" stroke-width="2"/>
-    <g clip-path="url(#barClip)"><rect x="616.0" y="298" width="533.6" height="24" fill="#ff8a14"/><rect x="1154.6" y="298" width="310.9" height="24" fill="#1e9bff"/><rect x="1470.5" y="298" width="84.8" height="24" fill="#8b5cf6"/><rect x="1560.2" y="298" width="79.3" height="24" fill="#16e07a"/><rect x="1644.5" y="298" width="4.7" height="24" fill="#fbbf24"/><rect x="1654.2" y="298" width="3.8" height="24" fill="#6f7fa6"/></g>
+    <g clip-path="url(#barClip)"><rect x="616.0" y="298" width="510.2" height="24" fill="#ff8a14"/><rect x="1131.2" y="298" width="297.3" height="24" fill="#1e9bff"/><rect x="1433.4" y="298" width="117.5" height="24" fill="#8b5cf6"/><rect x="1556.0" y="298" width="81.1" height="24" fill="#16e07a"/><rect x="1642.0" y="298" width="7.3" height="24" fill="#fbbf24"/><rect x="1654.4" y="298" width="3.6" height="24" fill="#6f7fa6"/></g>
     <line x1="940" y1="360" x2="940" y2="690" stroke="#1a2d52" stroke-width="2"/>
     <line x1="1288" y1="360" x2="1288" y2="690" stroke="#1a2d52" stroke-width="2"/>
     <line x1="616" y1="512" x2="1658" y2="512" stroke="#1a2d52" stroke-width="2"/>
     <circle cx="626" cy="386" r="9" fill="#ff8a14"/>
     <text x="650" y="396" font-size="29" fill="#8ea2c6">JavaScript</text>
-    <text x="650" y="470" font-size="58" font-weight="700" fill="#ffffff">52.5%</text>
+    <text x="650" y="470" font-size="58" font-weight="700" fill="#ffffff">50.2%</text>
     <circle cx="974" cy="386" r="9" fill="#1e9bff"/>
     <text x="998" y="396" font-size="29" fill="#8ea2c6">CSS</text>
-    <text x="998" y="470" font-size="58" font-weight="700" fill="#ffffff">30.6%</text>
+    <text x="998" y="470" font-size="58" font-weight="700" fill="#ffffff">29.2%</text>
     <circle cx="1322" cy="386" r="9" fill="#8b5cf6"/>
-    <text x="1346" y="396" font-size="29" fill="#8ea2c6">Python</text>
-    <text x="1346" y="470" font-size="58" font-weight="700" fill="#ffffff">8.3%</text>
+    <text x="1346" y="396" font-size="29" fill="#8ea2c6">C++</text>
+    <text x="1346" y="470" font-size="58" font-weight="700" fill="#ffffff">11.6%</text>
     <circle cx="626" cy="568" r="9" fill="#16e07a"/>
-    <text x="650" y="578" font-size="29" fill="#8ea2c6">C++</text>
-    <text x="650" y="652" font-size="58" font-weight="700" fill="#ffffff">7.8%</text>
+    <text x="650" y="578" font-size="29" fill="#8ea2c6">Python</text>
+    <text x="650" y="652" font-size="58" font-weight="700" fill="#ffffff">8.0%</text>
     <circle cx="974" cy="568" r="9" fill="#fbbf24"/>
     <text x="998" y="578" font-size="29" fill="#8ea2c6">CMake</text>
-    <text x="998" y="652" font-size="58" font-weight="700" fill="#ffffff">0.5%</text>
+    <text x="998" y="652" font-size="58" font-weight="700" fill="#ffffff">0.7%</text>
     <circle cx="1322" cy="568" r="9" fill="#6f7fa6"/>
     <text x="1346" y="578" font-size="29" fill="#8ea2c6">Others</text>
     <text x="1346" y="652" font-size="58" font-weight="700" fill="#ffffff">0.4%</text>
